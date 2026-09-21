@@ -1,0 +1,302 @@
+{
+  "schemaVersion": "1.0",
+  "isPlaceholder": true,
+  "title": "CELEUS × Jev",
+  "targetModel": "Jev",
+  "targetVersion": "Not configured",
+  "surrogateModel": "Not configured",
+  "runId": "Not started",
+  "updatedAt": "Not published",
+  "confidenceLevel": 0.95,
+  "coverageScope": "Per metric; joint coverage not configured",
+  "intervalMethod": "Not configured",
+  "costCurrency": "USD",
+  "timeAggregation": "Sum of separate benchmark-run wall times",
+  "links": {
+    "paper": "https://example.com/paper",
+    "code": "https://example.com/code",
+    "documentation": "https://example.com/documentation"
+  },
+  "benchmarks": [
+    {
+      "id": "ecd",
+      "shortName": "ECD",
+      "name": "E-commerce Dialogue Corpus",
+      "domain": "Customer service",
+      "icon": "message",
+      "caseUnit": "Context–response pair",
+      "split": "Not configured",
+      "metric": "Primary score · pending",
+      "poolSize": 0,
+      "evaluated": 0,
+      "stoppingSample": 0,
+      "targetCIWidth": 0,
+      "performance": {
+        "estimate": 0,
+        "lower": 0,
+        "upper": 0,
+        "fullReference": 0,
+        "referenceAvailable": false,
+        "certified": false
+      },
+      "resources": {
+        "costPerPoolCase": {
+          "celeus": {
+            "estimate": 0,
+            "lower": 0,
+            "upper": 0,
+            "intervalKind": "pending"
+          },
+          "full": {
+            "estimate": 0,
+            "lower": 0,
+            "upper": 0,
+            "intervalKind": "pending"
+          }
+        },
+        "secondsPerPoolCase": {
+          "celeus": {
+            "estimate": 0,
+            "lower": 0,
+            "upper": 0,
+            "intervalKind": "pending"
+          },
+          "full": {
+            "estimate": 0,
+            "lower": 0,
+            "upper": 0,
+            "intervalKind": "pending"
+          }
+        }
+      },
+      "totals": {
+        "fullCost": 0,
+        "targetCost": 0,
+        "surrogateCost": 0,
+        "overheadCost": 0,
+        "fullSeconds": 0,
+        "celeusSeconds": 0,
+        "baselineKind": "pending",
+        "runKind": "pending"
+      },
+      "run": {
+        "apiCalls": 0,
+        "retryAttempts": 0,
+        "cacheHits": 0,
+        "concurrency": 0,
+        "randomSeeds": 0
+      },
+      "notes": "Fix the evaluation split and response-scoring rule before publishing."
+    },
+    {
+      "id": "toolbench",
+      "shortName": "ToolBench",
+      "name": "ToolBench",
+      "domain": "Agent / tool use",
+      "icon": "terminal",
+      "caseUnit": "Tool decision · adapter pending",
+      "split": "Not configured",
+      "metric": "Primary score · pending",
+      "poolSize": 0,
+      "evaluated": 0,
+      "stoppingSample": 0,
+      "targetCIWidth": 0,
+      "performance": {
+        "estimate": 0,
+        "lower": 0,
+        "upper": 0,
+        "fullReference": 0,
+        "referenceAvailable": false,
+        "certified": false
+      },
+      "resources": {
+        "costPerPoolCase": {
+          "celeus": {
+            "estimate": 0,
+            "lower": 0,
+            "upper": 0,
+            "intervalKind": "pending"
+          },
+          "full": {
+            "estimate": 0,
+            "lower": 0,
+            "upper": 0,
+            "intervalKind": "pending"
+          }
+        },
+        "secondsPerPoolCase": {
+          "celeus": {
+            "estimate": 0,
+            "lower": 0,
+            "upper": 0,
+            "intervalKind": "pending"
+          },
+          "full": {
+            "estimate": 0,
+            "lower": 0,
+            "upper": 0,
+            "intervalKind": "pending"
+          }
+        }
+      },
+      "totals": {
+        "fullCost": 0,
+        "targetCost": 0,
+        "surrogateCost": 0,
+        "overheadCost": 0,
+        "fullSeconds": 0,
+        "celeusSeconds": 0,
+        "baselineKind": "pending",
+        "runKind": "pending"
+      },
+      "run": {
+        "apiCalls": 0,
+        "retryAttempts": 0,
+        "cacheHits": 0,
+        "concurrency": 0,
+        "randomSeeds": 0
+      },
+      "notes": "Define a case explicitly: an instruction, a decision, or a whole trajectory."
+    },
+    {
+      "id": "unsw",
+      "shortName": "UNSW-NB15",
+      "name": "UNSW-NB15",
+      "domain": "Security",
+      "icon": "shield",
+      "caseUnit": "Network record",
+      "split": "Not configured",
+      "metric": "Primary score · pending",
+      "poolSize": 0,
+      "evaluated": 0,
+      "stoppingSample": 0,
+      "targetCIWidth": 0,
+      "performance": {
+        "estimate": 0,
+        "lower": 0,
+        "upper": 0,
+        "fullReference": 0,
+        "referenceAvailable": false,
+        "certified": false
+      },
+      "resources": {
+        "costPerPoolCase": {
+          "celeus": {
+            "estimate": 0,
+            "lower": 0,
+            "upper": 0,
+            "intervalKind": "pending"
+          },
+          "full": {
+            "estimate": 0,
+            "lower": 0,
+            "upper": 0,
+            "intervalKind": "pending"
+          }
+        },
+        "secondsPerPoolCase": {
+          "celeus": {
+            "estimate": 0,
+            "lower": 0,
+            "upper": 0,
+            "intervalKind": "pending"
+          },
+          "full": {
+            "estimate": 0,
+            "lower": 0,
+            "upper": 0,
+            "intervalKind": "pending"
+          }
+        }
+      },
+      "totals": {
+        "fullCost": 0,
+        "targetCost": 0,
+        "surrogateCost": 0,
+        "overheadCost": 0,
+        "fullSeconds": 0,
+        "celeusSeconds": 0,
+        "baselineKind": "pending",
+        "runKind": "pending"
+      },
+      "run": {
+        "apiCalls": 0,
+        "retryAttempts": 0,
+        "cacheHits": 0,
+        "concurrency": 0,
+        "randomSeeds": 0
+      },
+      "notes": "Do not include ground-truth labels in the Jev input. Lock feature serialization."
+    },
+    {
+      "id": "ieee",
+      "shortName": "IEEE-CIS",
+      "name": "IEEE-CIS Fraud Detection",
+      "domain": "Financial risk",
+      "icon": "card",
+      "caseUnit": "Transaction",
+      "split": "Not configured",
+      "metric": "Primary score · pending",
+      "poolSize": 0,
+      "evaluated": 0,
+      "stoppingSample": 0,
+      "targetCIWidth": 0,
+      "performance": {
+        "estimate": 0,
+        "lower": 0,
+        "upper": 0,
+        "fullReference": 0,
+        "referenceAvailable": false,
+        "certified": false
+      },
+      "resources": {
+        "costPerPoolCase": {
+          "celeus": {
+            "estimate": 0,
+            "lower": 0,
+            "upper": 0,
+            "intervalKind": "pending"
+          },
+          "full": {
+            "estimate": 0,
+            "lower": 0,
+            "upper": 0,
+            "intervalKind": "pending"
+          }
+        },
+        "secondsPerPoolCase": {
+          "celeus": {
+            "estimate": 0,
+            "lower": 0,
+            "upper": 0,
+            "intervalKind": "pending"
+          },
+          "full": {
+            "estimate": 0,
+            "lower": 0,
+            "upper": 0,
+            "intervalKind": "pending"
+          }
+        }
+      },
+      "totals": {
+        "fullCost": 0,
+        "targetCost": 0,
+        "surrogateCost": 0,
+        "overheadCost": 0,
+        "fullSeconds": 0,
+        "celeusSeconds": 0,
+        "baselineKind": "pending",
+        "runKind": "pending"
+      },
+      "run": {
+        "apiCalls": 0,
+        "retryAttempts": 0,
+        "cacheHits": 0,
+        "concurrency": 0,
+        "randomSeeds": 0
+      },
+      "notes": "Publish the holdout construction, class balance, and primary metric definition."
+    }
+  ]
+}
