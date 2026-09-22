@@ -1,302 +1,2782 @@
 {
-  "schemaVersion": "1.0",
-  "isPlaceholder": true,
-  "title": "CELEUS × Jev",
-  "targetModel": "Jev",
-  "targetVersion": "Not configured",
-  "surrogateModel": "Not configured",
-  "runId": "Not started",
-  "updatedAt": "Not published",
-  "confidenceLevel": 0.95,
-  "coverageScope": "Per metric; joint coverage not configured",
-  "intervalMethod": "Not configured",
-  "costCurrency": "USD",
-  "timeAggregation": "Sum of separate benchmark-run wall times",
+  "schema_version": "jev-celeus-v2",
+  "method": "No-extra-LLM CELEUS and uniform WOR PPR EVALUE",
+  "target_model": "jev-1.13.0",
+  "updated_at": "2026-09-22T00:47:51.084063+00:00",
+  "is_placeholder": false,
+  "is_demo": false,
+  "alpha_family": "1/20",
+  "alpha_per_benchmark": "1/80",
+  "family_size": 4,
+  "scope": "Frozen eligible benchmark pools; not future deployment-population accuracy.",
+  "resource_note": "Observed active wall time and usage × assumed price only. No certified cost/time interval is computed. Independent full runs are paid separately; reported savings are protocol differences, not refunds.",
   "links": {
-    "paper": "https://example.com/paper",
-    "code": "https://example.com/code",
-    "documentation": "https://example.com/documentation"
+    "paper": "https://arxiv.org/pdf/2606.20820",
+    "code": "https://github.com/zyecs/celeus"
   },
   "benchmarks": [
     {
-      "id": "ecd",
-      "shortName": "ECD",
-      "name": "E-commerce Dialogue Corpus",
-      "domain": "Customer service",
-      "icon": "message",
-      "caseUnit": "Context–response pair",
-      "split": "Not configured",
-      "metric": "Primary score · pending",
-      "poolSize": 0,
-      "evaluated": 0,
-      "stoppingSample": 0,
-      "targetCIWidth": 0,
-      "performance": {
-        "estimate": 0,
-        "lower": 0,
-        "upper": 0,
-        "fullReference": 0,
-        "referenceAvailable": false,
-        "certified": false
-      },
-      "resources": {
-        "costPerPoolCase": {
-          "celeus": {
-            "estimate": 0,
-            "lower": 0,
-            "upper": 0,
-            "intervalKind": "pending"
-          },
-          "full": {
-            "estimate": 0,
-            "lower": 0,
-            "upper": 0,
-            "intervalKind": "pending"
+      "id": "arena",
+      "name": "Arena",
+      "metric": "4-class human-vote agreement",
+      "unit": "human vote",
+      "pool_size": 134243,
+      "evalue": {
+        "alpha_family": "1/20",
+        "alpha_per_benchmark": "1/80",
+        "assumptions": "Fixed outcomes per item, or preassignable order-independent per-item API randomness; fixed pool/prompt/model; uniform WOR; no skipped selected items. No deployment-population or API-drift guarantee.",
+        "backend": "jev",
+        "benchmark": "arena",
+        "check_every": 10,
+        "correct": 3529,
+        "descriptive_subset_scores": {
+          "default": {
+            "accuracy": 0.47053333333333336,
+            "certified": false,
+            "n": 7500
           }
         },
-        "secondsPerPoolCase": {
-          "celeus": {
-            "estimate": 0,
-            "lower": 0,
-            "upper": 0,
-            "intervalKind": "pending"
+        "epsilon_half_width": "0.02",
+        "error": null,
+        "evaluated": 7500,
+        "family_size": 4,
+        "input_too_long_scored_incorrect": 0,
+        "method": "evalue",
+        "mock": false,
+        "model": "jev-1.13.0",
+        "name": "Arena",
+        "performance": {
+          "certified_under_assumptions": true,
+          "estimate": 0.4739539491817078,
+          "estimate_definition": "CS midpoint",
+          "exact_denominator": 134243,
+          "exact_lower_count": 60954,
+          "exact_upper_count": 66296,
+          "kind": "anytime_cs",
+          "lower": 0.4540571947885551,
+          "sample_mean": 0.47053333333333336,
+          "upper": 0.4938507035748605,
+          "width": 0.03979350878630539
+        },
+        "pool": {
+          "adapter_version": "jev-adapters-v1.2-label-conflict-exclusion",
+          "benchmark": "arena",
+          "counts": {
+            "candidate_cases": 135634,
+            "excluded_request_bytes": 1391,
+            "retained:default": 134243,
+            "source_rows:default": 135634
           },
-          "full": {
-            "estimate": 0,
-            "lower": 0,
-            "upper": 0,
-            "intervalKind": "pending"
+          "created_at": "2026-09-21T14:09:16.485577+00:00",
+          "excluded_item_ids": {},
+          "files": {
+            "default": [
+              "data/train-00000-of-00007.parquet",
+              "data/train-00001-of-00007.parquet",
+              "data/train-00002-of-00007.parquet",
+              "data/train-00003-of-00007.parquet",
+              "data/train-00004-of-00007.parquet",
+              "data/train-00005-of-00007.parquet",
+              "data/train-00006-of-00007.parquet"
+            ]
+          },
+          "max_request_bytes": 60000,
+          "metric": "4-class human-vote agreement",
+          "mock_data": false,
+          "pool_sha256": "9923492df93181b65e533a32c836e32d2c99540af1a66d593c80b050f37e3bd2",
+          "pool_size": 134243,
+          "preparation_seed": 20260921,
+          "prepare_seconds": 105.64589674398303,
+          "repo_id": "lmarena-ai/arena-human-preference-140k",
+          "revision": "6322995ab34d7c2693e3f47dd13fa5caa0789a74",
+          "scope": "Frozen eligible cases; source-prefix subsets are demos, not representative benchmark estimates.",
+          "source_row_limit_per_subset": 0,
+          "unit": "human vote"
+        },
+        "protocol_sha256": "5908faa403f24a3dbce31b32e07be318701435dc6b978abde4f12f9c2ce53111",
+        "resources": {
+          "active_wall_seconds": 2098.501053504646,
+          "api_attempts": 6376,
+          "busy_rejections": 1,
+          "concurrency": 1,
+          "cost_interval": null,
+          "cost_kind": "rate_card_from_api_usage_not_invoice; reused answers at original usage",
+          "cost_per_pool_case": 7.379512913150035e-06,
+          "cross_run_cache_hits": 1125,
+          "duplicate_requests": 0,
+          "input_tokens": 23586856,
+          "key_rejections": 0,
+          "known_paid_cost_usd": 0.838334994,
+          "known_success_cost_usd": 0.9906479520000001,
+          "output_tokens": 345009,
+          "paid_cases": 6375,
+          "paid_cost_usd": 0.838334994,
+          "price": {
+            "input_usd_per_million": 0.042,
+            "note": "Unverified account rate-card assumption. Confirm in your TypeSafe console before a paid run; taxes/discounts/unknown failed calls are not included.",
+            "output_usd_per_million": 0.0
+          },
+          "rate_card_cost_usd": 0.9906479520000001,
+          "request_seconds_sum": 2011.6407153699547,
+          "seconds_per_pool_case": null,
+          "successful_cases": 7500,
+          "time_interval": null,
+          "time_kind": "not_comparable_answers_reused_from_store",
+          "timing_complete": true,
+          "unaccounted_attempt_ids": []
+        },
+        "sample_fraction": 0.05586883487407165,
+        "seed": 20260921,
+        "status": "precision_reached",
+        "updated_at": "2026-09-21T17:41:03.009042+00:00"
+      },
+      "celeus": {
+        "alpha_family": "1/20",
+        "alpha_per_benchmark": "1/80",
+        "assumptions": "Fixed or preassignable order-independent per-item outcomes; frozen pool/prompt/model; predictable positive adaptive WOR probabilities; frozen pre-query surrogate and support; no skipped selected item. No deployment-population or API-drift guarantee.",
+        "backend": "jev",
+        "benchmark": "arena",
+        "celeus": {
+          "accuracy_interval_is_reflected_loss_cs": true,
+          "features": {
+            "api_calls": 0,
+            "dimension": 52,
+            "gold_access": false,
+            "mean": [
+              1.0,
+              8.690989574677305,
+              6.758924489615086,
+              0.011546174048098583,
+              0.11713345016183416,
+              0.021205999020423524,
+              0.012487802830074396,
+              0.0,
+              0.004022642335049239,
+              0.02602181981077738,
+              7.858023744607635,
+              7.8622923512069365,
+              0.24861024803353565,
+              0.291217327692879,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              3.9170105469491667,
+              0.026376408237056493,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.7071067811874109,
+              -0.7071067811874109,
+              0.0,
+              0.0,
+              -0.0482105995306605,
+              0.185523799860522,
+              0.00641325491326024,
+              -0.09223779693129462,
+              -0.08291827290382749,
+              -0.010276027813284674,
+              0.12034282361728832,
+              -0.055450109237973624,
+              0.07883407314720799,
+              0.008045545416017886,
+              0.03638945987355221,
+              -0.012449830518797597,
+              -0.04960761091297095,
+              0.5799321318661047,
+              0.04663074819136547,
+              -0.2792809072340671
+            ],
+            "names": [
+              "intercept",
+              "log_chars",
+              "log_words",
+              "digits",
+              "non_ascii",
+              "math",
+              "code",
+              "newlines",
+              "negation",
+              "quotes",
+              "log_A",
+              "log_B",
+              "length_gap",
+              "AB_overlap",
+              "log_evidence",
+              "log_candidate",
+              "candidate_evidence_overlap",
+              "number_mismatch",
+              "log_messages",
+              "tool_messages",
+              "tool_errors",
+              "step_fraction",
+              "log_option_mean",
+              "option_std_ratio",
+              "category_hash_0",
+              "category_hash_1",
+              "category_hash_2",
+              "category_hash_3",
+              "category_hash_4",
+              "category_hash_5",
+              "category_hash_6",
+              "category_hash_7",
+              "category_hash_8",
+              "category_hash_9",
+              "category_hash_10",
+              "category_hash_11",
+              "word_hash_0",
+              "word_hash_1",
+              "word_hash_2",
+              "word_hash_3",
+              "word_hash_4",
+              "word_hash_5",
+              "word_hash_6",
+              "word_hash_7",
+              "word_hash_8",
+              "word_hash_9",
+              "word_hash_10",
+              "word_hash_11",
+              "word_hash_12",
+              "word_hash_13",
+              "word_hash_14",
+              "word_hash_15"
+            ],
+            "scale": [
+              0.05,
+              0.839918105198298,
+              0.8635447577272448,
+              0.05,
+              0.21063008282519768,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.9781050284577618,
+              0.9758845088129271,
+              0.1909728151348879,
+              0.14323282239306406,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.22263157238931774,
+              0.16206497357238858,
+              0.1274271149979752,
+              0.15586586576079356,
+              0.16279641266855072,
+              0.12850549671418007,
+              0.18089214777972412,
+              0.15652520694294808,
+              0.18219542094904512,
+              0.12491673309167334,
+              0.1666664003675169,
+              0.13171161411740484,
+              0.15615360698148098,
+              0.29286419174605577,
+              0.19248959095837564,
+              0.21383547844085474
+            ],
+            "version": "public-structural-hash-v1"
+          },
+          "inference": "finite_pool_predictable_residual_betting",
+          "numerics": "outward_bisection_float64",
+          "paid_warmup_included": true,
+          "selection": {
+            "audit_pass": true,
+            "name": "celeus_water08",
+            "selection_sha256": "888a764f98656025783be677fef417e5baf1b86f0a3098ff0b11ccccf64947dd",
+            "source": "synthetic_development_only",
+            "validation_protocol": {
+              "N": 800,
+              "alpha_per_benchmark": 0.0125,
+              "audit_seed_start": 81000,
+              "audit_seeds": 100,
+              "candidate_settings": {
+                "celeus_guarded_ig": {
+                  "acquisition": "guarded_ig",
+                  "beta": 0.4,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                },
+                "celeus_mix04": {
+                  "acquisition": "mixture",
+                  "beta": 0.4,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                },
+                "celeus_uniform": {
+                  "acquisition": "uniform",
+                  "beta": 0.4,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                },
+                "celeus_water04": {
+                  "acquisition": "waterfill",
+                  "beta": 0.4,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                },
+                "celeus_water08": {
+                  "acquisition": "waterfill",
+                  "beta": 0.8,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                }
+              },
+              "check_every": 10,
+              "core_sha256": "1d7e6478d41e63f32a99690e37dcdd28cdfff69de7c9a1fc8cea974ce943a265",
+              "coverage_screen": "one-sided exact binomial p < .01/(methods*scenarios) flags an implementation concern; passing does NOT prove coverage",
+              "dev_seeds": 12,
+              "development_seed_start": 11000,
+              "epsilon_half_width": 0.05,
+              "extra_llm_calls": 0,
+              "jev_calls": 0,
+              "numpy": "2.3.5",
+              "python": "3.12.14",
+              "scenarios": [
+                "linear",
+                "heterogeneous",
+                "nonlinear",
+                "uninformative",
+                "rare_errors",
+                "clustered"
+              ],
+              "scipy": "1.17.0",
+              "selection_metric": "macro mean first-stop fraction; CELEUS candidates only; coverage screening first",
+              "synthetic_only": true
+            }
+          },
+          "settings": {
+            "acquisition": "waterfill",
+            "beta": 0.8,
+            "cap": 0.9,
+            "half_life": 64.0,
+            "refit_every": 16,
+            "ridge": 1.0,
+            "surrogate": true,
+            "warmup": 32
           }
-        }
+        },
+        "check_every": 10,
+        "correct": 1770,
+        "descriptive_subset_scores": {
+          "default": {
+            "accuracy": 0.46701846965699206,
+            "certified": false,
+            "n": 3790
+          }
+        },
+        "epsilon_half_width": "0.02",
+        "error": null,
+        "evaluated": 3790,
+        "family_size": 4,
+        "input_too_long_scored_incorrect": 0,
+        "method": "celeus",
+        "mock": false,
+        "model": "jev-1.13.0",
+        "name": "Arena",
+        "performance": {
+          "certified_under_assumptions": true,
+          "estimate": 0.47180071023092823,
+          "estimate_definition": "CS midpoint",
+          "exact_denominator": null,
+          "exact_lower_count": null,
+          "exact_upper_count": null,
+          "kind": "anytime_cs",
+          "lower": 0.45180256115865003,
+          "sample_mean": 0.46701846965699206,
+          "sample_mean_note": "Descriptive only: adaptively selected sample mean is not a certified population estimate. Use CS midpoint and bounds.",
+          "upper": 0.49179885930320644,
+          "width": 0.03999629814455641
+        },
+        "pool": {
+          "adapter_version": "jev-adapters-v1.2-label-conflict-exclusion",
+          "benchmark": "arena",
+          "counts": {
+            "candidate_cases": 135634,
+            "excluded_request_bytes": 1391,
+            "retained:default": 134243,
+            "source_rows:default": 135634
+          },
+          "created_at": "2026-09-21T14:09:16.485577+00:00",
+          "excluded_item_ids": {},
+          "files": {
+            "default": [
+              "data/train-00000-of-00007.parquet",
+              "data/train-00001-of-00007.parquet",
+              "data/train-00002-of-00007.parquet",
+              "data/train-00003-of-00007.parquet",
+              "data/train-00004-of-00007.parquet",
+              "data/train-00005-of-00007.parquet",
+              "data/train-00006-of-00007.parquet"
+            ]
+          },
+          "max_request_bytes": 60000,
+          "metric": "4-class human-vote agreement",
+          "mock_data": false,
+          "pool_sha256": "9923492df93181b65e533a32c836e32d2c99540af1a66d593c80b050f37e3bd2",
+          "pool_size": 134243,
+          "preparation_seed": 20260921,
+          "prepare_seconds": 105.64589674398303,
+          "repo_id": "lmarena-ai/arena-human-preference-140k",
+          "revision": "6322995ab34d7c2693e3f47dd13fa5caa0789a74",
+          "scope": "Frozen eligible cases; source-prefix subsets are demos, not representative benchmark estimates.",
+          "source_row_limit_per_subset": 0,
+          "unit": "human vote"
+        },
+        "protocol_sha256": "5908faa403f24a3dbce31b32e07be318701435dc6b978abde4f12f9c2ce53111",
+        "resources": {
+          "active_wall_seconds": 668.56113008596,
+          "api_attempts": 0,
+          "busy_rejections": 0,
+          "concurrency": 1,
+          "cost_interval": null,
+          "cost_kind": "rate_card_from_api_usage_not_invoice; reused answers at original usage",
+          "cost_per_pool_case": 3.6899300969138058e-06,
+          "cross_run_cache_hits": 3790,
+          "duplicate_requests": 0,
+          "input_tokens": 11793983,
+          "key_rejections": 0,
+          "known_paid_cost_usd": 0,
+          "known_success_cost_usd": 0.49534728600000005,
+          "output_tokens": 174347,
+          "paid_cases": 0,
+          "paid_cost_usd": 0,
+          "price": {
+            "input_usd_per_million": 0.042,
+            "note": "Unverified account rate-card assumption. Confirm in your TypeSafe console before a paid run; taxes/discounts/unknown failed calls are not included.",
+            "output_usd_per_million": 0.0
+          },
+          "rate_card_cost_usd": 0.49534728600000005,
+          "request_seconds_sum": 956.5686065359041,
+          "seconds_per_pool_case": null,
+          "successful_cases": 3790,
+          "time_interval": null,
+          "time_kind": "not_comparable_answers_reused_from_store",
+          "timing_complete": true,
+          "unaccounted_attempt_ids": []
+        },
+        "sample_fraction": 0.028232384556364204,
+        "seed": 20260921,
+        "status": "precision_reached",
+        "updated_at": "2026-09-21T16:21:55.049296+00:00"
       },
-      "totals": {
-        "fullCost": 0,
-        "targetCost": 0,
-        "surrogateCost": 0,
-        "overheadCost": 0,
-        "fullSeconds": 0,
-        "celeusSeconds": 0,
-        "baselineKind": "pending",
-        "runKind": "pending"
+      "full": null,
+      "comparison": {
+        "available": false,
+        "cost_saved_usd": null,
+        "time_saved_seconds": null,
+        "cost_saved_fraction": null,
+        "time_saved_fraction": null,
+        "overlap": null,
+        "requirement": "Savings require a completed full run AND an e-value run reaching its prespecified precision."
       },
-      "run": {
-        "apiCalls": 0,
-        "retryAttempts": 0,
-        "cacheHits": 0,
-        "concurrency": 0,
-        "randomSeeds": 0
+      "celeus_comparison": {
+        "available": false,
+        "cost_saved_usd": null,
+        "time_saved_seconds": null,
+        "cost_saved_fraction": null,
+        "time_saved_fraction": null,
+        "overlap": null
       },
-      "notes": "Fix the evaluation split and response-scoring rule before publishing."
+      "celeus_vs_evalue": {
+        "available": true,
+        "queries_saved": 3710,
+        "queries_saved_fraction": 0.4946666666666667,
+        "note": "Single independent runs at matched precision/alpha; negative savings are retained. Not a repeated-run superiority claim."
+      }
     },
     {
-      "id": "toolbench",
-      "shortName": "ToolBench",
-      "name": "ToolBench",
-      "domain": "Agent / tool use",
-      "icon": "terminal",
-      "caseUnit": "Tool decision · adapter pending",
-      "split": "Not configured",
-      "metric": "Primary score · pending",
-      "poolSize": 0,
-      "evaluated": 0,
-      "stoppingSample": 0,
-      "targetCIWidth": 0,
-      "performance": {
-        "estimate": 0,
-        "lower": 0,
-        "upper": 0,
-        "fullReference": 0,
-        "referenceAvailable": false,
-        "certified": false
-      },
-      "resources": {
-        "costPerPoolCase": {
-          "celeus": {
-            "estimate": 0,
-            "lower": 0,
-            "upper": 0,
-            "intervalKind": "pending"
+      "id": "mmlu_prox",
+      "name": "MMLU-ProX",
+      "metric": "Zero-shot multiple-choice accuracy",
+      "unit": "language-question pair",
+      "pool_size": 340982,
+      "evalue": {
+        "alpha_family": "1/20",
+        "alpha_per_benchmark": "1/80",
+        "assumptions": "Fixed outcomes per item, or preassignable order-independent per-item API randomness; fixed pool/prompt/model; uniform WOR; no skipped selected items. No deployment-population or API-drift guarantee.",
+        "backend": "jev",
+        "benchmark": "mmlu_prox",
+        "check_every": 10,
+        "correct": 4795,
+        "descriptive_subset_scores": {
+          "af": {
+            "accuracy": 0.755656108597285,
+            "certified": false,
+            "n": 221
           },
-          "full": {
-            "estimate": 0,
-            "lower": 0,
-            "upper": 0,
-            "intervalKind": "pending"
+          "ar": {
+            "accuracy": 0.7961165048543689,
+            "certified": false,
+            "n": 206
+          },
+          "bn": {
+            "accuracy": 0.7161572052401747,
+            "certified": false,
+            "n": 229
+          },
+          "cs": {
+            "accuracy": 0.7807486631016043,
+            "certified": false,
+            "n": 187
+          },
+          "de": {
+            "accuracy": 0.7884615384615384,
+            "certified": false,
+            "n": 208
+          },
+          "en": {
+            "accuracy": 0.8495145631067961,
+            "certified": false,
+            "n": 206
+          },
+          "es": {
+            "accuracy": 0.8202764976958525,
+            "certified": false,
+            "n": 217
+          },
+          "fr": {
+            "accuracy": 0.8235294117647058,
+            "certified": false,
+            "n": 221
+          },
+          "hi": {
+            "accuracy": 0.7203791469194313,
+            "certified": false,
+            "n": 211
+          },
+          "hu": {
+            "accuracy": 0.7847533632286996,
+            "certified": false,
+            "n": 223
+          },
+          "id": {
+            "accuracy": 0.7933884297520661,
+            "certified": false,
+            "n": 242
+          },
+          "it": {
+            "accuracy": 0.8447488584474886,
+            "certified": false,
+            "n": 219
+          },
+          "ja": {
+            "accuracy": 0.8025751072961373,
+            "certified": false,
+            "n": 233
+          },
+          "ko": {
+            "accuracy": 0.8232758620689655,
+            "certified": false,
+            "n": 232
+          },
+          "mr": {
+            "accuracy": 0.7183098591549296,
+            "certified": false,
+            "n": 213
+          },
+          "ne": {
+            "accuracy": 0.7735849056603774,
+            "certified": false,
+            "n": 212
+          },
+          "pt": {
+            "accuracy": 0.8483412322274881,
+            "certified": false,
+            "n": 211
+          },
+          "ru": {
+            "accuracy": 0.7794117647058824,
+            "certified": false,
+            "n": 204
+          },
+          "sr": {
+            "accuracy": 0.8061674008810573,
+            "certified": false,
+            "n": 227
+          },
+          "sw": {
+            "accuracy": 0.6727272727272727,
+            "certified": false,
+            "n": 220
+          },
+          "te": {
+            "accuracy": 0.7242990654205608,
+            "certified": false,
+            "n": 214
+          },
+          "th": {
+            "accuracy": 0.7348837209302326,
+            "certified": false,
+            "n": 215
+          },
+          "uk": {
+            "accuracy": 0.8085106382978723,
+            "certified": false,
+            "n": 235
+          },
+          "ur": {
+            "accuracy": 0.766497461928934,
+            "certified": false,
+            "n": 197
+          },
+          "vi": {
+            "accuracy": 0.8084112149532711,
+            "certified": false,
+            "n": 214
+          },
+          "wo": {
+            "accuracy": 0.5330188679245284,
+            "certified": false,
+            "n": 212
+          },
+          "yo": {
+            "accuracy": 0.5821596244131455,
+            "certified": false,
+            "n": 213
+          },
+          "zh": {
+            "accuracy": 0.7654867256637168,
+            "certified": false,
+            "n": 226
+          },
+          "zu": {
+            "accuracy": 0.7075471698113207,
+            "certified": false,
+            "n": 212
           }
         },
-        "secondsPerPoolCase": {
-          "celeus": {
-            "estimate": 0,
-            "lower": 0,
-            "upper": 0,
-            "intervalKind": "pending"
+        "epsilon_half_width": "0.02",
+        "error": null,
+        "evaluated": 6280,
+        "family_size": 4,
+        "input_too_long_scored_incorrect": 0,
+        "method": "evalue",
+        "mock": false,
+        "model": "jev-1.13.0",
+        "name": "MMLU-ProX",
+        "performance": {
+          "certified_under_assumptions": true,
+          "estimate": 0.7608422145450493,
+          "estimate_definition": "CS midpoint",
+          "exact_denominator": 340982,
+          "exact_lower_count": 252636,
+          "exact_upper_count": 266231,
+          "kind": "anytime_cs",
+          "lower": 0.7409071446586624,
+          "sample_mean": 0.7635350318471338,
+          "upper": 0.7807772844314362,
+          "width": 0.03987013977277387
+        },
+        "pool": {
+          "adapter_version": "jev-adapters-v1.2-label-conflict-exclusion",
+          "benchmark": "mmlu_prox",
+          "counts": {
+            "candidate_cases": 341011,
+            "excluded_reference_label_conflict": 29,
+            "retained:af": 11758,
+            "retained:ar": 11758,
+            "retained:bn": 11758,
+            "retained:cs": 11758,
+            "retained:de": 11758,
+            "retained:en": 11758,
+            "retained:es": 11758,
+            "retained:fr": 11758,
+            "retained:hi": 11758,
+            "retained:hu": 11758,
+            "retained:id": 11758,
+            "retained:it": 11758,
+            "retained:ja": 11758,
+            "retained:ko": 11758,
+            "retained:mr": 11758,
+            "retained:ne": 11758,
+            "retained:pt": 11758,
+            "retained:ru": 11758,
+            "retained:sr": 11758,
+            "retained:sw": 11758,
+            "retained:te": 11758,
+            "retained:th": 11758,
+            "retained:uk": 11758,
+            "retained:ur": 11758,
+            "retained:vi": 11758,
+            "retained:wo": 11758,
+            "retained:yo": 11758,
+            "retained:zh": 11758,
+            "retained:zu": 11758,
+            "source_rows:af": 11759,
+            "source_rows:ar": 11759,
+            "source_rows:bn": 11759,
+            "source_rows:cs": 11759,
+            "source_rows:de": 11759,
+            "source_rows:en": 11759,
+            "source_rows:es": 11759,
+            "source_rows:fr": 11759,
+            "source_rows:hi": 11759,
+            "source_rows:hu": 11759,
+            "source_rows:id": 11759,
+            "source_rows:it": 11759,
+            "source_rows:ja": 11759,
+            "source_rows:ko": 11759,
+            "source_rows:mr": 11759,
+            "source_rows:ne": 11759,
+            "source_rows:pt": 11759,
+            "source_rows:ru": 11759,
+            "source_rows:sr": 11759,
+            "source_rows:sw": 11759,
+            "source_rows:te": 11759,
+            "source_rows:th": 11759,
+            "source_rows:uk": 11759,
+            "source_rows:ur": 11759,
+            "source_rows:vi": 11759,
+            "source_rows:wo": 11759,
+            "source_rows:yo": 11759,
+            "source_rows:zh": 11759,
+            "source_rows:zu": 11759
           },
-          "full": {
-            "estimate": 0,
-            "lower": 0,
-            "upper": 0,
-            "intervalKind": "pending"
+          "created_at": "2026-09-21T14:09:45.715536+00:00",
+          "excluded_item_ids": {
+            "reference_label_conflict": [
+              "mmlu_prox:af:3717",
+              "mmlu_prox:ar:3717",
+              "mmlu_prox:bn:3717",
+              "mmlu_prox:cs:3717",
+              "mmlu_prox:de:3717",
+              "mmlu_prox:en:3717",
+              "mmlu_prox:es:3717",
+              "mmlu_prox:fr:3717",
+              "mmlu_prox:hi:3717",
+              "mmlu_prox:hu:3717",
+              "mmlu_prox:id:3717",
+              "mmlu_prox:it:3717",
+              "mmlu_prox:ja:3717",
+              "mmlu_prox:ko:3717",
+              "mmlu_prox:mr:3717",
+              "mmlu_prox:ne:3717",
+              "mmlu_prox:pt:3717",
+              "mmlu_prox:ru:3717",
+              "mmlu_prox:sr:3717",
+              "mmlu_prox:sw:3717",
+              "mmlu_prox:te:3717",
+              "mmlu_prox:th:3717",
+              "mmlu_prox:uk:3717",
+              "mmlu_prox:ur:3717",
+              "mmlu_prox:vi:3717",
+              "mmlu_prox:wo:3717",
+              "mmlu_prox:yo:3717",
+              "mmlu_prox:zh:3717",
+              "mmlu_prox:zu:3717"
+            ]
+          },
+          "files": {
+            "af": [
+              "af/test-00000-of-00001.parquet"
+            ],
+            "ar": [
+              "ar/test-00000-of-00001.parquet"
+            ],
+            "bn": [
+              "bn/test-00000-of-00001.parquet"
+            ],
+            "cs": [
+              "cs/test-00000-of-00001.parquet"
+            ],
+            "de": [
+              "de/test-00000-of-00001.parquet"
+            ],
+            "en": [
+              "en/test-00000-of-00001.parquet"
+            ],
+            "es": [
+              "es/test-00000-of-00001.parquet"
+            ],
+            "fr": [
+              "fr/test-00000-of-00001.parquet"
+            ],
+            "hi": [
+              "hi/test-00000-of-00001.parquet"
+            ],
+            "hu": [
+              "hu/test-00000-of-00001.parquet"
+            ],
+            "id": [
+              "id/test-00000-of-00001.parquet"
+            ],
+            "it": [
+              "it/test-00000-of-00001.parquet"
+            ],
+            "ja": [
+              "ja/test-00000-of-00001.parquet"
+            ],
+            "ko": [
+              "ko/test-00000-of-00001.parquet"
+            ],
+            "mr": [
+              "mr/test-00000-of-00001.parquet"
+            ],
+            "ne": [
+              "ne/test-00000-of-00001.parquet"
+            ],
+            "pt": [
+              "pt/test-00000-of-00001.parquet"
+            ],
+            "ru": [
+              "ru/test-00000-of-00001.parquet"
+            ],
+            "sr": [
+              "sr/test-00000-of-00001.parquet"
+            ],
+            "sw": [
+              "sw/test-00000-of-00001.parquet"
+            ],
+            "te": [
+              "te/test-00000-of-00001.parquet"
+            ],
+            "th": [
+              "th/test-00000-of-00001.parquet"
+            ],
+            "uk": [
+              "uk/test-00000-of-00001.parquet"
+            ],
+            "ur": [
+              "ur/test-00000-of-00001.parquet"
+            ],
+            "vi": [
+              "vi/test-00000-of-00001.parquet"
+            ],
+            "wo": [
+              "wo/test-00000-of-00001.parquet"
+            ],
+            "yo": [
+              "yo/test-00000-of-00001.parquet"
+            ],
+            "zh": [
+              "zh/test-00000-of-00001.parquet"
+            ],
+            "zu": [
+              "zu/test-00000-of-00001.parquet"
+            ]
+          },
+          "max_request_bytes": 60000,
+          "metric": "Zero-shot multiple-choice accuracy",
+          "mock_data": false,
+          "pool_sha256": "677f7edcd57da3c208d5b0630a93d3aa75aa05d100e34cffad73d5b116977b28",
+          "pool_size": 340982,
+          "preparation_seed": 20260921,
+          "prepare_seconds": 27.99958974774927,
+          "repo_id": "li-lab/MMLU-ProX",
+          "revision": "8e6106a6c6ce1c5027e66cc338143cf997b2aa09",
+          "scope": "Frozen eligible cases; source-prefix subsets are demos, not representative benchmark estimates.",
+          "source_row_limit_per_subset": 0,
+          "unit": "language-question pair"
+        },
+        "protocol_sha256": "5c4ede55456c79983691c2f1b2cc483a04791deededb87c0c6cd235747fc36c6",
+        "resources": {
+          "active_wall_seconds": 1895.944337187335,
+          "api_attempts": 6000,
+          "busy_rejections": 0,
+          "concurrency": 1,
+          "cost_interval": null,
+          "cost_kind": "rate_card_from_api_usage_not_invoice; reused answers at original usage",
+          "cost_per_pool_case": 5.996757541453802e-07,
+          "cross_run_cache_hits": 280,
+          "duplicate_requests": 0,
+          "input_tokens": 4868539,
+          "key_rejections": 0,
+          "known_paid_cost_usd": 0.19566909600000001,
+          "known_success_cost_usd": 0.20447863800000002,
+          "output_tokens": 525080,
+          "paid_cases": 6000,
+          "paid_cost_usd": 0.19566909600000001,
+          "price": {
+            "input_usd_per_million": 0.042,
+            "note": "Unverified account rate-card assumption. Confirm in your TypeSafe console before a paid run; taxes/discounts/unknown failed calls are not included.",
+            "output_usd_per_million": 0.0
+          },
+          "rate_card_cost_usd": 0.20447863800000002,
+          "request_seconds_sum": 1611.9610147047788,
+          "seconds_per_pool_case": null,
+          "successful_cases": 6280,
+          "time_interval": null,
+          "time_kind": "not_comparable_answers_reused_from_store",
+          "timing_complete": true,
+          "unaccounted_attempt_ids": []
+        },
+        "sample_fraction": 0.01841739446657008,
+        "seed": 20260921,
+        "status": "precision_reached",
+        "updated_at": "2026-09-21T18:12:39.035213+00:00"
+      },
+      "celeus": {
+        "alpha_family": "1/20",
+        "alpha_per_benchmark": "1/80",
+        "assumptions": "Fixed or preassignable order-independent per-item outcomes; frozen pool/prompt/model; predictable positive adaptive WOR probabilities; frozen pre-query surrogate and support; no skipped selected item. No deployment-population or API-drift guarantee.",
+        "backend": "jev",
+        "benchmark": "mmlu_prox",
+        "celeus": {
+          "accuracy_interval_is_reflected_loss_cs": true,
+          "features": {
+            "api_calls": 0,
+            "dimension": 52,
+            "gold_access": false,
+            "mean": [
+              1.0,
+              6.341188535705786,
+              4.636154819855066,
+              0.05304099437789,
+              0.24886242009650783,
+              0.0063945225241975375,
+              0.012246790951839273,
+              0.0,
+              0.0006352571331664877,
+              0.09621768616207017,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              3.0784819907809124,
+              0.20114137012203978,
+              -0.04876598490942201,
+              -0.07314897736407194,
+              -0.04876598490942201,
+              -0.04876598490942201,
+              0.0,
+              -0.07314897736407194,
+              -0.09753196981872188,
+              -0.04876598490942201,
+              -4.7849556779804506e-18,
+              0.09753196981872188,
+              -5.496056875633506e-19,
+              5.496056875633506e-19,
+              -0.16165706074085115,
+              0.02950637942832006,
+              -0.02057531574890886,
+              0.03618631669885671,
+              -0.16317471685853807,
+              -0.18584503055630655,
+              -0.08021913574578521,
+              -0.05145175222470693,
+              -0.025331628261358517,
+              0.025508785060943385,
+              0.009721530950374828,
+              -0.033181015124046934,
+              0.07059969327786457,
+              0.02252331158744642,
+              -0.007596257600080488,
+              -0.008380776126154255
+            ],
+            "names": [
+              "intercept",
+              "log_chars",
+              "log_words",
+              "digits",
+              "non_ascii",
+              "math",
+              "code",
+              "newlines",
+              "negation",
+              "quotes",
+              "log_A",
+              "log_B",
+              "length_gap",
+              "AB_overlap",
+              "log_evidence",
+              "log_candidate",
+              "candidate_evidence_overlap",
+              "number_mismatch",
+              "log_messages",
+              "tool_messages",
+              "tool_errors",
+              "step_fraction",
+              "log_option_mean",
+              "option_std_ratio",
+              "category_hash_0",
+              "category_hash_1",
+              "category_hash_2",
+              "category_hash_3",
+              "category_hash_4",
+              "category_hash_5",
+              "category_hash_6",
+              "category_hash_7",
+              "category_hash_8",
+              "category_hash_9",
+              "category_hash_10",
+              "category_hash_11",
+              "word_hash_0",
+              "word_hash_1",
+              "word_hash_2",
+              "word_hash_3",
+              "word_hash_4",
+              "word_hash_5",
+              "word_hash_6",
+              "word_hash_7",
+              "word_hash_8",
+              "word_hash_9",
+              "word_hash_10",
+              "word_hash_11",
+              "word_hash_12",
+              "word_hash_13",
+              "word_hash_14",
+              "word_hash_15"
+            ],
+            "scale": [
+              0.05,
+              0.6225555729220474,
+              0.7102090371815636,
+              0.06483315103108417,
+              0.27744560759577636,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.054926896015961436,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              1.079692241787485,
+              0.1801348806370883,
+              0.2580453370186669,
+              0.33961578626830197,
+              0.3179153261134386,
+              0.2580453370186517,
+              0.05,
+              0.28435211211089323,
+              0.35835533949693676,
+              0.17917766974830152,
+              0.3216337604513384,
+              0.3064894626652869,
+              0.37139067635410367,
+              0.18569533817705183,
+              0.2714388691293509,
+              0.2128415318215276,
+              0.24121809699312582,
+              0.22832704727864464,
+              0.25900585999937814,
+              0.22700251068402266,
+              0.25441905901026673,
+              0.2336178950688076,
+              0.23799859396422576,
+              0.20110794651358252,
+              0.236013734631722,
+              0.2277236241561625,
+              0.2223533463135895,
+              0.24075438428856594,
+              0.2504493703356745,
+              0.22563688229708806
+            ],
+            "version": "public-structural-hash-v1"
+          },
+          "inference": "finite_pool_predictable_residual_betting",
+          "numerics": "outward_bisection_float64",
+          "paid_warmup_included": true,
+          "selection": {
+            "audit_pass": true,
+            "name": "celeus_water08",
+            "selection_sha256": "888a764f98656025783be677fef417e5baf1b86f0a3098ff0b11ccccf64947dd",
+            "source": "synthetic_development_only",
+            "validation_protocol": {
+              "N": 800,
+              "alpha_per_benchmark": 0.0125,
+              "audit_seed_start": 81000,
+              "audit_seeds": 100,
+              "candidate_settings": {
+                "celeus_guarded_ig": {
+                  "acquisition": "guarded_ig",
+                  "beta": 0.4,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                },
+                "celeus_mix04": {
+                  "acquisition": "mixture",
+                  "beta": 0.4,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                },
+                "celeus_uniform": {
+                  "acquisition": "uniform",
+                  "beta": 0.4,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                },
+                "celeus_water04": {
+                  "acquisition": "waterfill",
+                  "beta": 0.4,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                },
+                "celeus_water08": {
+                  "acquisition": "waterfill",
+                  "beta": 0.8,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                }
+              },
+              "check_every": 10,
+              "core_sha256": "1d7e6478d41e63f32a99690e37dcdd28cdfff69de7c9a1fc8cea974ce943a265",
+              "coverage_screen": "one-sided exact binomial p < .01/(methods*scenarios) flags an implementation concern; passing does NOT prove coverage",
+              "dev_seeds": 12,
+              "development_seed_start": 11000,
+              "epsilon_half_width": 0.05,
+              "extra_llm_calls": 0,
+              "jev_calls": 0,
+              "numpy": "2.3.5",
+              "python": "3.12.14",
+              "scenarios": [
+                "linear",
+                "heterogeneous",
+                "nonlinear",
+                "uninformative",
+                "rare_errors",
+                "clustered"
+              ],
+              "scipy": "1.17.0",
+              "selection_metric": "macro mean first-stop fraction; CELEUS candidates only; coverage screening first",
+              "synthetic_only": true
+            }
+          },
+          "settings": {
+            "acquisition": "waterfill",
+            "beta": 0.8,
+            "cap": 0.9,
+            "half_life": 64.0,
+            "refit_every": 16,
+            "ridge": 1.0,
+            "surrogate": true,
+            "warmup": 32
           }
-        }
+        },
+        "check_every": 10,
+        "correct": 2937,
+        "descriptive_subset_scores": {
+          "af": {
+            "accuracy": 0.8058252427184466,
+            "certified": false,
+            "n": 103
+          },
+          "ar": {
+            "accuracy": 0.7678571428571429,
+            "certified": false,
+            "n": 112
+          },
+          "bn": {
+            "accuracy": 0.6993006993006993,
+            "certified": false,
+            "n": 143
+          },
+          "cs": {
+            "accuracy": 0.782312925170068,
+            "certified": false,
+            "n": 147
+          },
+          "de": {
+            "accuracy": 0.7943262411347518,
+            "certified": false,
+            "n": 141
+          },
+          "en": {
+            "accuracy": 0.7801418439716312,
+            "certified": false,
+            "n": 141
+          },
+          "es": {
+            "accuracy": 0.8040540540540541,
+            "certified": false,
+            "n": 148
+          },
+          "fr": {
+            "accuracy": 0.8583333333333333,
+            "certified": false,
+            "n": 120
+          },
+          "hi": {
+            "accuracy": 0.7751937984496124,
+            "certified": false,
+            "n": 129
+          },
+          "hu": {
+            "accuracy": 0.7786259541984732,
+            "certified": false,
+            "n": 131
+          },
+          "id": {
+            "accuracy": 0.8285714285714286,
+            "certified": false,
+            "n": 140
+          },
+          "it": {
+            "accuracy": 0.7478991596638656,
+            "certified": false,
+            "n": 119
+          },
+          "ja": {
+            "accuracy": 0.7338129496402878,
+            "certified": false,
+            "n": 139
+          },
+          "ko": {
+            "accuracy": 0.7890625,
+            "certified": false,
+            "n": 128
+          },
+          "mr": {
+            "accuracy": 0.756578947368421,
+            "certified": false,
+            "n": 152
+          },
+          "ne": {
+            "accuracy": 0.7835820895522388,
+            "certified": false,
+            "n": 134
+          },
+          "pt": {
+            "accuracy": 0.8467741935483871,
+            "certified": false,
+            "n": 124
+          },
+          "ru": {
+            "accuracy": 0.8389830508474576,
+            "certified": false,
+            "n": 118
+          },
+          "sr": {
+            "accuracy": 0.7720588235294118,
+            "certified": false,
+            "n": 136
+          },
+          "sw": {
+            "accuracy": 0.6867469879518072,
+            "certified": false,
+            "n": 166
+          },
+          "te": {
+            "accuracy": 0.7207792207792207,
+            "certified": false,
+            "n": 154
+          },
+          "th": {
+            "accuracy": 0.7874015748031497,
+            "certified": false,
+            "n": 127
+          },
+          "uk": {
+            "accuracy": 0.7787610619469026,
+            "certified": false,
+            "n": 113
+          },
+          "ur": {
+            "accuracy": 0.7983870967741935,
+            "certified": false,
+            "n": 124
+          },
+          "vi": {
+            "accuracy": 0.7553956834532374,
+            "certified": false,
+            "n": 139
+          },
+          "wo": {
+            "accuracy": 0.5380116959064327,
+            "certified": false,
+            "n": 171
+          },
+          "yo": {
+            "accuracy": 0.6231884057971014,
+            "certified": false,
+            "n": 138
+          },
+          "zh": {
+            "accuracy": 0.7666666666666667,
+            "certified": false,
+            "n": 120
+          },
+          "zu": {
+            "accuracy": 0.6240601503759399,
+            "certified": false,
+            "n": 133
+          }
+        },
+        "epsilon_half_width": "0.02",
+        "error": null,
+        "evaluated": 3890,
+        "family_size": 4,
+        "input_too_long_scored_incorrect": 0,
+        "method": "celeus",
+        "mock": false,
+        "model": "jev-1.13.0",
+        "name": "MMLU-ProX",
+        "performance": {
+          "certified_under_assumptions": true,
+          "estimate": 0.7562829194500389,
+          "estimate_definition": "CS midpoint",
+          "exact_denominator": null,
+          "exact_lower_count": null,
+          "exact_upper_count": null,
+          "kind": "anytime_cs",
+          "lower": 0.7363073121987664,
+          "sample_mean": 0.755012853470437,
+          "sample_mean_note": "Descriptive only: adaptively selected sample mean is not a certified population estimate. Use CS midpoint and bounds.",
+          "upper": 0.7762585267013113,
+          "width": 0.03995121450254491
+        },
+        "pool": {
+          "adapter_version": "jev-adapters-v1.2-label-conflict-exclusion",
+          "benchmark": "mmlu_prox",
+          "counts": {
+            "candidate_cases": 341011,
+            "excluded_reference_label_conflict": 29,
+            "retained:af": 11758,
+            "retained:ar": 11758,
+            "retained:bn": 11758,
+            "retained:cs": 11758,
+            "retained:de": 11758,
+            "retained:en": 11758,
+            "retained:es": 11758,
+            "retained:fr": 11758,
+            "retained:hi": 11758,
+            "retained:hu": 11758,
+            "retained:id": 11758,
+            "retained:it": 11758,
+            "retained:ja": 11758,
+            "retained:ko": 11758,
+            "retained:mr": 11758,
+            "retained:ne": 11758,
+            "retained:pt": 11758,
+            "retained:ru": 11758,
+            "retained:sr": 11758,
+            "retained:sw": 11758,
+            "retained:te": 11758,
+            "retained:th": 11758,
+            "retained:uk": 11758,
+            "retained:ur": 11758,
+            "retained:vi": 11758,
+            "retained:wo": 11758,
+            "retained:yo": 11758,
+            "retained:zh": 11758,
+            "retained:zu": 11758,
+            "source_rows:af": 11759,
+            "source_rows:ar": 11759,
+            "source_rows:bn": 11759,
+            "source_rows:cs": 11759,
+            "source_rows:de": 11759,
+            "source_rows:en": 11759,
+            "source_rows:es": 11759,
+            "source_rows:fr": 11759,
+            "source_rows:hi": 11759,
+            "source_rows:hu": 11759,
+            "source_rows:id": 11759,
+            "source_rows:it": 11759,
+            "source_rows:ja": 11759,
+            "source_rows:ko": 11759,
+            "source_rows:mr": 11759,
+            "source_rows:ne": 11759,
+            "source_rows:pt": 11759,
+            "source_rows:ru": 11759,
+            "source_rows:sr": 11759,
+            "source_rows:sw": 11759,
+            "source_rows:te": 11759,
+            "source_rows:th": 11759,
+            "source_rows:uk": 11759,
+            "source_rows:ur": 11759,
+            "source_rows:vi": 11759,
+            "source_rows:wo": 11759,
+            "source_rows:yo": 11759,
+            "source_rows:zh": 11759,
+            "source_rows:zu": 11759
+          },
+          "created_at": "2026-09-21T14:09:45.715536+00:00",
+          "excluded_item_ids": {
+            "reference_label_conflict": [
+              "mmlu_prox:af:3717",
+              "mmlu_prox:ar:3717",
+              "mmlu_prox:bn:3717",
+              "mmlu_prox:cs:3717",
+              "mmlu_prox:de:3717",
+              "mmlu_prox:en:3717",
+              "mmlu_prox:es:3717",
+              "mmlu_prox:fr:3717",
+              "mmlu_prox:hi:3717",
+              "mmlu_prox:hu:3717",
+              "mmlu_prox:id:3717",
+              "mmlu_prox:it:3717",
+              "mmlu_prox:ja:3717",
+              "mmlu_prox:ko:3717",
+              "mmlu_prox:mr:3717",
+              "mmlu_prox:ne:3717",
+              "mmlu_prox:pt:3717",
+              "mmlu_prox:ru:3717",
+              "mmlu_prox:sr:3717",
+              "mmlu_prox:sw:3717",
+              "mmlu_prox:te:3717",
+              "mmlu_prox:th:3717",
+              "mmlu_prox:uk:3717",
+              "mmlu_prox:ur:3717",
+              "mmlu_prox:vi:3717",
+              "mmlu_prox:wo:3717",
+              "mmlu_prox:yo:3717",
+              "mmlu_prox:zh:3717",
+              "mmlu_prox:zu:3717"
+            ]
+          },
+          "files": {
+            "af": [
+              "af/test-00000-of-00001.parquet"
+            ],
+            "ar": [
+              "ar/test-00000-of-00001.parquet"
+            ],
+            "bn": [
+              "bn/test-00000-of-00001.parquet"
+            ],
+            "cs": [
+              "cs/test-00000-of-00001.parquet"
+            ],
+            "de": [
+              "de/test-00000-of-00001.parquet"
+            ],
+            "en": [
+              "en/test-00000-of-00001.parquet"
+            ],
+            "es": [
+              "es/test-00000-of-00001.parquet"
+            ],
+            "fr": [
+              "fr/test-00000-of-00001.parquet"
+            ],
+            "hi": [
+              "hi/test-00000-of-00001.parquet"
+            ],
+            "hu": [
+              "hu/test-00000-of-00001.parquet"
+            ],
+            "id": [
+              "id/test-00000-of-00001.parquet"
+            ],
+            "it": [
+              "it/test-00000-of-00001.parquet"
+            ],
+            "ja": [
+              "ja/test-00000-of-00001.parquet"
+            ],
+            "ko": [
+              "ko/test-00000-of-00001.parquet"
+            ],
+            "mr": [
+              "mr/test-00000-of-00001.parquet"
+            ],
+            "ne": [
+              "ne/test-00000-of-00001.parquet"
+            ],
+            "pt": [
+              "pt/test-00000-of-00001.parquet"
+            ],
+            "ru": [
+              "ru/test-00000-of-00001.parquet"
+            ],
+            "sr": [
+              "sr/test-00000-of-00001.parquet"
+            ],
+            "sw": [
+              "sw/test-00000-of-00001.parquet"
+            ],
+            "te": [
+              "te/test-00000-of-00001.parquet"
+            ],
+            "th": [
+              "th/test-00000-of-00001.parquet"
+            ],
+            "uk": [
+              "uk/test-00000-of-00001.parquet"
+            ],
+            "ur": [
+              "ur/test-00000-of-00001.parquet"
+            ],
+            "vi": [
+              "vi/test-00000-of-00001.parquet"
+            ],
+            "wo": [
+              "wo/test-00000-of-00001.parquet"
+            ],
+            "yo": [
+              "yo/test-00000-of-00001.parquet"
+            ],
+            "zh": [
+              "zh/test-00000-of-00001.parquet"
+            ],
+            "zu": [
+              "zu/test-00000-of-00001.parquet"
+            ]
+          },
+          "max_request_bytes": 60000,
+          "metric": "Zero-shot multiple-choice accuracy",
+          "mock_data": false,
+          "pool_sha256": "677f7edcd57da3c208d5b0630a93d3aa75aa05d100e34cffad73d5b116977b28",
+          "pool_size": 340982,
+          "preparation_seed": 20260921,
+          "prepare_seconds": 27.99958974774927,
+          "repo_id": "li-lab/MMLU-ProX",
+          "revision": "8e6106a6c6ce1c5027e66cc338143cf997b2aa09",
+          "scope": "Frozen eligible cases; source-prefix subsets are demos, not representative benchmark estimates.",
+          "source_row_limit_per_subset": 0,
+          "unit": "language-question pair"
+        },
+        "protocol_sha256": "5c4ede55456c79983691c2f1b2cc483a04791deededb87c0c6cd235747fc36c6",
+        "resources": {
+          "active_wall_seconds": 362.78127939999104,
+          "api_attempts": 0,
+          "busy_rejections": 0,
+          "concurrency": 1,
+          "cost_interval": null,
+          "cost_kind": "rate_card_from_api_usage_not_invoice; reused answers at original usage",
+          "cost_per_pool_case": 3.741096832090844e-07,
+          "cross_run_cache_hits": 3890,
+          "duplicate_requests": 0,
+          "input_tokens": 3037254,
+          "key_rejections": 0,
+          "known_paid_cost_usd": 0,
+          "known_success_cost_usd": 0.12756466800000002,
+          "output_tokens": 324234,
+          "paid_cases": 0,
+          "paid_cost_usd": 0,
+          "price": {
+            "input_usd_per_million": 0.042,
+            "note": "Unverified account rate-card assumption. Confirm in your TypeSafe console before a paid run; taxes/discounts/unknown failed calls are not included.",
+            "output_usd_per_million": 0.0
+          },
+          "rate_card_cost_usd": 0.12756466800000002,
+          "request_seconds_sum": 973.3200769135728,
+          "seconds_per_pool_case": null,
+          "successful_cases": 3890,
+          "time_interval": null,
+          "time_kind": "not_comparable_answers_reused_from_store",
+          "timing_complete": true,
+          "unaccounted_attempt_ids": []
+        },
+        "sample_fraction": 0.011408226827222551,
+        "seed": 20260921,
+        "status": "precision_reached",
+        "updated_at": "2026-09-21T16:27:57.873355+00:00"
       },
-      "totals": {
-        "fullCost": 0,
-        "targetCost": 0,
-        "surrogateCost": 0,
-        "overheadCost": 0,
-        "fullSeconds": 0,
-        "celeusSeconds": 0,
-        "baselineKind": "pending",
-        "runKind": "pending"
+      "full": null,
+      "comparison": {
+        "available": false,
+        "cost_saved_usd": null,
+        "time_saved_seconds": null,
+        "cost_saved_fraction": null,
+        "time_saved_fraction": null,
+        "overlap": null,
+        "requirement": "Savings require a completed full run AND an e-value run reaching its prespecified precision."
       },
-      "run": {
-        "apiCalls": 0,
-        "retryAttempts": 0,
-        "cacheHits": 0,
-        "concurrency": 0,
-        "randomSeeds": 0
+      "celeus_comparison": {
+        "available": false,
+        "cost_saved_usd": null,
+        "time_saved_seconds": null,
+        "cost_saved_fraction": null,
+        "time_saved_fraction": null,
+        "overlap": null
       },
-      "notes": "Define a case explicitly: an instruction, a decision, or a whole trajectory."
+      "celeus_vs_evalue": {
+        "available": true,
+        "queries_saved": 2390,
+        "queries_saved_fraction": 0.3805732484076433,
+        "note": "Single independent runs at matched precision/alpha; negative savings are retained. Not a repeated-run superiority claim."
+      }
     },
     {
-      "id": "unsw",
-      "shortName": "UNSW-NB15",
-      "name": "UNSW-NB15",
-      "domain": "Security",
-      "icon": "shield",
-      "caseUnit": "Network record",
-      "split": "Not configured",
-      "metric": "Primary score · pending",
-      "poolSize": 0,
-      "evaluated": 0,
-      "stoppingSample": 0,
-      "targetCIWidth": 0,
-      "performance": {
-        "estimate": 0,
-        "lower": 0,
-        "upper": 0,
-        "fullReference": 0,
-        "referenceAvailable": false,
-        "certified": false
-      },
-      "resources": {
-        "costPerPoolCase": {
-          "celeus": {
-            "estimate": 0,
-            "lower": 0,
-            "upper": 0,
-            "intervalKind": "pending"
+      "id": "halueval",
+      "name": "HaluEval",
+      "metric": "Task-specific hallucination detection accuracy",
+      "unit": "context-candidate pair",
+      "pool_size": 30000,
+      "evalue": {
+        "alpha_family": "1/20",
+        "alpha_per_benchmark": "1/80",
+        "assumptions": "Fixed outcomes per item, or preassignable order-independent per-item API randomness; fixed pool/prompt/model; uniform WOR; no skipped selected items. No deployment-population or API-drift guarantee.",
+        "backend": "jev",
+        "benchmark": "halueval",
+        "check_every": 10,
+        "correct": 4674,
+        "descriptive_subset_scores": {
+          "dialogue": {
+            "accuracy": 0.6646595646132468,
+            "certified": false,
+            "n": 2159
           },
-          "full": {
-            "estimate": 0,
-            "lower": 0,
-            "upper": 0,
-            "intervalKind": "pending"
+          "qa": {
+            "accuracy": 0.8401869158878504,
+            "certified": false,
+            "n": 2140
+          },
+          "summarization": {
+            "accuracy": 0.6924555502162422,
+            "certified": false,
+            "n": 2081
           }
         },
-        "secondsPerPoolCase": {
-          "celeus": {
-            "estimate": 0,
-            "lower": 0,
-            "upper": 0,
-            "intervalKind": "pending"
+        "epsilon_half_width": "0.02",
+        "error": null,
+        "evaluated": 6380,
+        "family_size": 4,
+        "input_too_long_scored_incorrect": 0,
+        "method": "evalue",
+        "mock": false,
+        "model": "jev-1.13.0",
+        "name": "HaluEval",
+        "performance": {
+          "certified_under_assumptions": true,
+          "estimate": 0.73285,
+          "estimate_definition": "CS midpoint",
+          "exact_denominator": 30000,
+          "exact_lower_count": 21387,
+          "exact_upper_count": 22584,
+          "kind": "anytime_cs",
+          "lower": 0.7129,
+          "sample_mean": 0.7326018808777429,
+          "upper": 0.7528,
+          "width": 0.03990000000000005
+        },
+        "pool": {
+          "adapter_version": "jev-adapters-v1.2-label-conflict-exclusion",
+          "benchmark": "halueval",
+          "counts": {
+            "candidate_cases": 30000,
+            "retained:dialogue": 10000,
+            "retained:qa": 10000,
+            "retained:summarization": 10000,
+            "source_rows:dialogue": 10000,
+            "source_rows:qa": 10000,
+            "source_rows:summarization": 10000
           },
-          "full": {
-            "estimate": 0,
-            "lower": 0,
-            "upper": 0,
-            "intervalKind": "pending"
+          "created_at": "2026-09-21T14:09:49.618634+00:00",
+          "excluded_item_ids": {},
+          "files": {
+            "dialogue": [
+              "dialogue/data-00000-of-00001.parquet"
+            ],
+            "qa": [
+              "qa/data-00000-of-00001.parquet"
+            ],
+            "summarization": [
+              "summarization/data-00000-of-00001.parquet"
+            ]
+          },
+          "max_request_bytes": 60000,
+          "metric": "Task-specific hallucination detection accuracy",
+          "mock_data": false,
+          "pool_sha256": "283ba6900c531fb46fcabc232112db8db8b8a5aa7b1069ba595e7cad56975d74",
+          "pool_size": 30000,
+          "preparation_seed": 20260921,
+          "prepare_seconds": 3.3599568903446198,
+          "repo_id": "pminervini/HaluEval",
+          "revision": "12a856119f03975a94509091e8cada3e6be6ead7",
+          "scope": "Frozen eligible cases; source-prefix subsets are demos, not representative benchmark estimates.",
+          "source_row_limit_per_subset": 0,
+          "unit": "context-candidate pair"
+        },
+        "protocol_sha256": "3b8c5d1bff4431012938f9f023afd92c03685462cb932ce1de94227bd67a4fe3",
+        "resources": {
+          "active_wall_seconds": 1255.5878486651927,
+          "api_attempts": 3995,
+          "busy_rejections": 0,
+          "concurrency": 1,
+          "cost_interval": null,
+          "cost_kind": "rate_card_from_api_usage_not_invoice; reused answers at original usage",
+          "cost_per_pool_case": 7.166103000000001e-06,
+          "cross_run_cache_hits": 2385,
+          "duplicate_requests": 0,
+          "input_tokens": 5118645,
+          "key_rejections": 0,
+          "known_paid_cost_usd": 0.13375651800000002,
+          "known_success_cost_usd": 0.21498309000000002,
+          "output_tokens": 197780,
+          "paid_cases": 3995,
+          "paid_cost_usd": 0.13375651800000002,
+          "price": {
+            "input_usd_per_million": 0.042,
+            "note": "Unverified account rate-card assumption. Confirm in your TypeSafe console before a paid run; taxes/discounts/unknown failed calls are not included.",
+            "output_usd_per_million": 0.0
+          },
+          "rate_card_cost_usd": 0.21498309000000002,
+          "request_seconds_sum": 1582.3652787087485,
+          "seconds_per_pool_case": null,
+          "successful_cases": 6380,
+          "time_interval": null,
+          "time_kind": "not_comparable_answers_reused_from_store",
+          "timing_complete": true,
+          "unaccounted_attempt_ids": []
+        },
+        "sample_fraction": 0.21266666666666667,
+        "seed": 20260921,
+        "status": "precision_reached",
+        "updated_at": "2026-09-21T18:33:34.709099+00:00"
+      },
+      "celeus": {
+        "alpha_family": "1/20",
+        "alpha_per_benchmark": "1/80",
+        "assumptions": "Fixed or preassignable order-independent per-item outcomes; frozen pool/prompt/model; predictable positive adaptive WOR probabilities; frozen pre-query surrogate and support; no skipped selected item. No deployment-population or API-drift guarantee.",
+        "backend": "jev",
+        "benchmark": "halueval",
+        "celeus": {
+          "accuracy_interval_is_reflected_loss_cs": true,
+          "features": {
+            "api_calls": 0,
+            "dimension": 52,
+            "gold_access": false,
+            "mean": [
+              1.0,
+              7.078213396597523,
+              5.253853081501218,
+              0.009815091409475821,
+              0.001480949710137979,
+              0.00013082302065824203,
+              0.009194357513890333,
+              0.0,
+              0.010899714271545138,
+              0.02403151653997958,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              6.148360287265518,
+              4.488733411288309,
+              0.1272705855492578,
+              0.07258236133917158,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              3.850147601711539,
+              0.15217391304345002,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.23570226039553915,
+              0.0,
+              0.0,
+              0.4714045207910948,
+              0.0,
+              0.23570226039553915,
+              0.0,
+              -0.2690500004984932,
+              0.27296441578114,
+              0.06531347427920944,
+              0.00690469446041218,
+              -0.03116087302864676,
+              -0.01983853125980849,
+              0.13984925807868215,
+              0.050683460813171405,
+              0.05770605446819177,
+              -0.04784356768720118,
+              0.2161100849261621,
+              -0.08958328131032743,
+              -0.13436373798220722,
+              -0.04854122634314258,
+              -0.019737063551828495,
+              -0.3904996531765972
+            ],
+            "names": [
+              "intercept",
+              "log_chars",
+              "log_words",
+              "digits",
+              "non_ascii",
+              "math",
+              "code",
+              "newlines",
+              "negation",
+              "quotes",
+              "log_A",
+              "log_B",
+              "length_gap",
+              "AB_overlap",
+              "log_evidence",
+              "log_candidate",
+              "candidate_evidence_overlap",
+              "number_mismatch",
+              "log_messages",
+              "tool_messages",
+              "tool_errors",
+              "step_fraction",
+              "log_option_mean",
+              "option_std_ratio",
+              "category_hash_0",
+              "category_hash_1",
+              "category_hash_2",
+              "category_hash_3",
+              "category_hash_4",
+              "category_hash_5",
+              "category_hash_6",
+              "category_hash_7",
+              "category_hash_8",
+              "category_hash_9",
+              "category_hash_10",
+              "category_hash_11",
+              "word_hash_0",
+              "word_hash_1",
+              "word_hash_2",
+              "word_hash_3",
+              "word_hash_4",
+              "word_hash_5",
+              "word_hash_6",
+              "word_hash_7",
+              "word_hash_8",
+              "word_hash_9",
+              "word_hash_10",
+              "word_hash_11",
+              "word_hash_12",
+              "word_hash_13",
+              "word_hash_14",
+              "word_hash_15"
+            ],
+            "scale": [
+              0.05,
+              0.9106988974935037,
+              0.9621362973626182,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              1.5754049322720622,
+              1.2691345598537347,
+              0.09499431128481994,
+              0.2485288993592557,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.33333333333331056,
+              0.05,
+              0.05,
+              0.33333333333335924,
+              0.05,
+              0.33333333333341403,
+              0.05,
+              0.1913953282363035,
+              0.1754188826151991,
+              0.17300220179964795,
+              0.17528048860630327,
+              0.1999205277013072,
+              0.1850183664265334,
+              0.1974627005610588,
+              0.17967764717017232,
+              0.17991722977510585,
+              0.15743296639931978,
+              0.1869710238736488,
+              0.16962627326798801,
+              0.18537397598095093,
+              0.19757653101706166,
+              0.2652689172354953,
+              0.23124433966736793
+            ],
+            "version": "public-structural-hash-v1"
+          },
+          "inference": "finite_pool_predictable_residual_betting",
+          "numerics": "outward_bisection_float64",
+          "paid_warmup_included": true,
+          "selection": {
+            "audit_pass": true,
+            "name": "celeus_water08",
+            "selection_sha256": "888a764f98656025783be677fef417e5baf1b86f0a3098ff0b11ccccf64947dd",
+            "source": "synthetic_development_only",
+            "validation_protocol": {
+              "N": 800,
+              "alpha_per_benchmark": 0.0125,
+              "audit_seed_start": 81000,
+              "audit_seeds": 100,
+              "candidate_settings": {
+                "celeus_guarded_ig": {
+                  "acquisition": "guarded_ig",
+                  "beta": 0.4,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                },
+                "celeus_mix04": {
+                  "acquisition": "mixture",
+                  "beta": 0.4,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                },
+                "celeus_uniform": {
+                  "acquisition": "uniform",
+                  "beta": 0.4,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                },
+                "celeus_water04": {
+                  "acquisition": "waterfill",
+                  "beta": 0.4,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                },
+                "celeus_water08": {
+                  "acquisition": "waterfill",
+                  "beta": 0.8,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                }
+              },
+              "check_every": 10,
+              "core_sha256": "1d7e6478d41e63f32a99690e37dcdd28cdfff69de7c9a1fc8cea974ce943a265",
+              "coverage_screen": "one-sided exact binomial p < .01/(methods*scenarios) flags an implementation concern; passing does NOT prove coverage",
+              "dev_seeds": 12,
+              "development_seed_start": 11000,
+              "epsilon_half_width": 0.05,
+              "extra_llm_calls": 0,
+              "jev_calls": 0,
+              "numpy": "2.3.5",
+              "python": "3.12.14",
+              "scenarios": [
+                "linear",
+                "heterogeneous",
+                "nonlinear",
+                "uninformative",
+                "rare_errors",
+                "clustered"
+              ],
+              "scipy": "1.17.0",
+              "selection_metric": "macro mean first-stop fraction; CELEUS candidates only; coverage screening first",
+              "synthetic_only": true
+            }
+          },
+          "settings": {
+            "acquisition": "waterfill",
+            "beta": 0.8,
+            "cap": 0.9,
+            "half_life": 64.0,
+            "refit_every": 16,
+            "ridge": 1.0,
+            "surrogate": true,
+            "warmup": 32
           }
-        }
+        },
+        "check_every": 10,
+        "correct": 3231,
+        "descriptive_subset_scores": {
+          "dialogue": {
+            "accuracy": 0.6955107351984385,
+            "certified": false,
+            "n": 1537
+          },
+          "qa": {
+            "accuracy": 0.8326996197718631,
+            "certified": false,
+            "n": 1315
+          },
+          "summarization": {
+            "accuracy": 0.7170698924731183,
+            "certified": false,
+            "n": 1488
+          }
+        },
+        "epsilon_half_width": "0.02",
+        "error": null,
+        "evaluated": 4340,
+        "family_size": 4,
+        "input_too_long_scored_incorrect": 0,
+        "method": "celeus",
+        "mock": false,
+        "model": "jev-1.13.0",
+        "name": "HaluEval",
+        "performance": {
+          "certified_under_assumptions": true,
+          "estimate": 0.7538548131106505,
+          "estimate_definition": "CS midpoint",
+          "exact_denominator": null,
+          "exact_lower_count": null,
+          "exact_upper_count": null,
+          "kind": "anytime_cs",
+          "lower": 0.7339093130155951,
+          "sample_mean": 0.7444700460829493,
+          "sample_mean_note": "Descriptive only: adaptively selected sample mean is not a certified population estimate. Use CS midpoint and bounds.",
+          "upper": 0.7738003132057059,
+          "width": 0.039891000190110715
+        },
+        "pool": {
+          "adapter_version": "jev-adapters-v1.2-label-conflict-exclusion",
+          "benchmark": "halueval",
+          "counts": {
+            "candidate_cases": 30000,
+            "retained:dialogue": 10000,
+            "retained:qa": 10000,
+            "retained:summarization": 10000,
+            "source_rows:dialogue": 10000,
+            "source_rows:qa": 10000,
+            "source_rows:summarization": 10000
+          },
+          "created_at": "2026-09-21T14:09:49.618634+00:00",
+          "excluded_item_ids": {},
+          "files": {
+            "dialogue": [
+              "dialogue/data-00000-of-00001.parquet"
+            ],
+            "qa": [
+              "qa/data-00000-of-00001.parquet"
+            ],
+            "summarization": [
+              "summarization/data-00000-of-00001.parquet"
+            ]
+          },
+          "max_request_bytes": 60000,
+          "metric": "Task-specific hallucination detection accuracy",
+          "mock_data": false,
+          "pool_sha256": "283ba6900c531fb46fcabc232112db8db8b8a5aa7b1069ba595e7cad56975d74",
+          "pool_size": 30000,
+          "preparation_seed": 20260921,
+          "prepare_seconds": 3.3599568903446198,
+          "repo_id": "pminervini/HaluEval",
+          "revision": "12a856119f03975a94509091e8cada3e6be6ead7",
+          "scope": "Frozen eligible cases; source-prefix subsets are demos, not representative benchmark estimates.",
+          "source_row_limit_per_subset": 0,
+          "unit": "context-candidate pair"
+        },
+        "protocol_sha256": "3b8c5d1bff4431012938f9f023afd92c03685462cb932ce1de94227bd67a4fe3",
+        "resources": {
+          "active_wall_seconds": 1322.3348996080458,
+          "api_attempts": 4064,
+          "busy_rejections": 0,
+          "concurrency": 1,
+          "cost_interval": null,
+          "cost_kind": "rate_card_from_api_usage_not_invoice; reused answers at original usage",
+          "cost_per_pool_case": 4.9969472000000005e-06,
+          "cross_run_cache_hits": 276,
+          "duplicate_requests": 0,
+          "input_tokens": 3569248,
+          "key_rejections": 0,
+          "known_paid_cost_usd": 0.14065812600000002,
+          "known_success_cost_usd": 0.14990841600000002,
+          "output_tokens": 134540,
+          "paid_cases": 4064,
+          "paid_cost_usd": 0.14065812600000002,
+          "price": {
+            "input_usd_per_million": 0.042,
+            "note": "Unverified account rate-card assumption. Confirm in your TypeSafe console before a paid run; taxes/discounts/unknown failed calls are not included.",
+            "output_usd_per_million": 0.0
+          },
+          "rate_card_cost_usd": 0.14990841600000002,
+          "request_seconds_sum": 1106.5598240541294,
+          "seconds_per_pool_case": null,
+          "successful_cases": 4340,
+          "time_interval": null,
+          "time_kind": "not_comparable_answers_reused_from_store",
+          "timing_complete": true,
+          "unaccounted_attempt_ids": []
+        },
+        "sample_fraction": 0.14466666666666667,
+        "seed": 20260921,
+        "status": "precision_reached",
+        "updated_at": "2026-09-21T16:50:00.269413+00:00"
       },
-      "totals": {
-        "fullCost": 0,
-        "targetCost": 0,
-        "surrogateCost": 0,
-        "overheadCost": 0,
-        "fullSeconds": 0,
-        "celeusSeconds": 0,
-        "baselineKind": "pending",
-        "runKind": "pending"
+      "full": null,
+      "comparison": {
+        "available": false,
+        "cost_saved_usd": null,
+        "time_saved_seconds": null,
+        "cost_saved_fraction": null,
+        "time_saved_fraction": null,
+        "overlap": null,
+        "requirement": "Savings require a completed full run AND an e-value run reaching its prespecified precision."
       },
-      "run": {
-        "apiCalls": 0,
-        "retryAttempts": 0,
-        "cacheHits": 0,
-        "concurrency": 0,
-        "randomSeeds": 0
+      "celeus_comparison": {
+        "available": false,
+        "cost_saved_usd": null,
+        "time_saved_seconds": null,
+        "cost_saved_fraction": null,
+        "time_saved_fraction": null,
+        "overlap": null
       },
-      "notes": "Do not include ground-truth labels in the Jev input. Lock feature serialization."
+      "celeus_vs_evalue": {
+        "available": true,
+        "queries_saved": 2040,
+        "queries_saved_fraction": 0.31974921630094044,
+        "note": "Single independent runs at matched precision/alpha; negative savings are retained. Not a repeated-run superiority claim."
+      }
     },
     {
-      "id": "ieee",
-      "shortName": "IEEE-CIS",
-      "name": "IEEE-CIS Fraud Detection",
-      "domain": "Financial risk",
-      "icon": "card",
-      "caseUnit": "Transaction",
-      "split": "Not configured",
-      "metric": "Primary score · pending",
-      "poolSize": 0,
-      "evaluated": 0,
-      "stoppingSample": 0,
-      "targetCIWidth": 0,
-      "performance": {
-        "estimate": 0,
-        "lower": 0,
-        "upper": 0,
-        "fullReference": 0,
-        "referenceAvailable": false,
-        "certified": false
-      },
-      "resources": {
-        "costPerPoolCase": {
-          "celeus": {
-            "estimate": 0,
-            "lower": 0,
-            "upper": 0,
-            "intervalKind": "pending"
+      "id": "agentprocessbench",
+      "name": "AgentProcessBench",
+      "metric": "Pooled step-label micro accuracy",
+      "unit": "annotated assistant step",
+      "pool_size": 5875,
+      "evalue": {
+        "alpha_family": "1/20",
+        "alpha_per_benchmark": "1/80",
+        "assumptions": "Fixed outcomes per item, or preassignable order-independent per-item API randomness; fixed pool/prompt/model; uniform WOR; no skipped selected items. No deployment-population or API-drift guarantee.",
+        "backend": "jev",
+        "benchmark": "agentprocessbench",
+        "check_every": 10,
+        "correct": 2467,
+        "descriptive_subset_scores": {
+          "bfcl": {
+            "accuracy": 0.7384155455904334,
+            "certified": false,
+            "n": 669
           },
-          "full": {
-            "estimate": 0,
-            "lower": 0,
-            "upper": 0,
-            "intervalKind": "pending"
+          "gaia_dev": {
+            "accuracy": 0.5287356321839081,
+            "certified": false,
+            "n": 609
+          },
+          "hotpotqa": {
+            "accuracy": 0.735,
+            "certified": false,
+            "n": 400
+          },
+          "tau2": {
+            "accuracy": 0.7834872979214781,
+            "certified": false,
+            "n": 1732
           }
         },
-        "secondsPerPoolCase": {
-          "celeus": {
-            "estimate": 0,
-            "lower": 0,
-            "upper": 0,
-            "intervalKind": "pending"
+        "epsilon_half_width": "0.02",
+        "error": null,
+        "evaluated": 3410,
+        "family_size": 4,
+        "input_too_long_scored_incorrect": 0,
+        "method": "evalue",
+        "mock": false,
+        "model": "jev-1.13.0",
+        "name": "AgentProcessBench",
+        "performance": {
+          "certified_under_assumptions": true,
+          "estimate": 0.7222127659574469,
+          "estimate_definition": "CS midpoint",
+          "exact_denominator": 5875,
+          "exact_lower_count": 4126,
+          "exact_upper_count": 4360,
+          "kind": "anytime_cs",
+          "lower": 0.7022978723404255,
+          "sample_mean": 0.7234604105571848,
+          "upper": 0.7421276595744681,
+          "width": 0.039829787234042624
+        },
+        "pool": {
+          "adapter_version": "jev-adapters-v1.2-label-conflict-exclusion",
+          "benchmark": "agentprocessbench",
+          "counts": {
+            "candidate_cases": 8509,
+            "excluded_request_bytes": 2634,
+            "retained:bfcl": 1131,
+            "retained:gaia_dev": 1088,
+            "retained:hotpotqa": 687,
+            "retained:tau2": 2969,
+            "source_rows:bfcl": 250,
+            "source_rows:gaia_dev": 250,
+            "source_rows:hotpotqa": 250,
+            "source_rows:tau2": 250
           },
-          "full": {
-            "estimate": 0,
-            "lower": 0,
-            "upper": 0,
-            "intervalKind": "pending"
+          "created_at": "2026-09-21T14:09:57.298831+00:00",
+          "excluded_item_ids": {},
+          "files": {
+            "bfcl": [
+              "bfcl/test.jsonl"
+            ],
+            "gaia_dev": [
+              "gaia_dev/test.jsonl"
+            ],
+            "hotpotqa": [
+              "hotpotqa/test.jsonl"
+            ],
+            "tau2": [
+              "tau2/test.jsonl"
+            ]
+          },
+          "max_request_bytes": 60000,
+          "metric": "Pooled step-label micro accuracy",
+          "mock_data": false,
+          "pool_sha256": "28175b7483743fac4bb983c190863970371901b8ff3a9b96cb9fba0eb1637d3e",
+          "pool_size": 5875,
+          "preparation_seed": 20260921,
+          "prepare_seconds": 7.597996628843248,
+          "repo_id": "LulaCola/AgentProcessBench",
+          "revision": "cd81f326aece8b0a3f6359e20df370690d3a98bf",
+          "scope": "Frozen eligible cases; source-prefix subsets are demos, not representative benchmark estimates.",
+          "source_row_limit_per_subset": 0,
+          "unit": "annotated assistant step"
+        },
+        "protocol_sha256": "b94e8da679fd9ff5d8763f53d2d17972e8428f7c19074f0abf5e16691fff08ce",
+        "resources": {
+          "active_wall_seconds": 436.502688722685,
+          "api_attempts": 923,
+          "busy_rejections": 0,
+          "concurrency": 1,
+          "cost_interval": null,
+          "cost_kind": "rate_card_from_api_usage_not_invoice; reused answers at original usage",
+          "cost_per_pool_case": 0.0002700967169361702,
+          "cross_run_cache_hits": 2487,
+          "duplicate_requests": 0,
+          "input_tokens": 37781386,
+          "key_rejections": 0,
+          "known_paid_cost_usd": 0.435211854,
+          "known_success_cost_usd": 1.586818212,
+          "output_tokens": 129580,
+          "paid_cases": 923,
+          "paid_cost_usd": 0.435211854,
+          "price": {
+            "input_usd_per_million": 0.042,
+            "note": "Unverified account rate-card assumption. Confirm in your TypeSafe console before a paid run; taxes/discounts/unknown failed calls are not included.",
+            "output_usd_per_million": 0.0
+          },
+          "rate_card_cost_usd": 1.586818212,
+          "request_seconds_sum": 1207.8185631539673,
+          "seconds_per_pool_case": null,
+          "successful_cases": 3410,
+          "time_interval": null,
+          "time_kind": "not_comparable_answers_reused_from_store",
+          "timing_complete": true,
+          "unaccounted_attempt_ids": []
+        },
+        "sample_fraction": 0.5804255319148937,
+        "seed": 20260921,
+        "status": "precision_reached",
+        "updated_at": "2026-09-21T18:40:51.253061+00:00"
+      },
+      "celeus": {
+        "alpha_family": "1/20",
+        "alpha_per_benchmark": "1/80",
+        "assumptions": "Fixed or preassignable order-independent per-item outcomes; frozen pool/prompt/model; predictable positive adaptive WOR probabilities; frozen pre-query surrogate and support; no skipped selected item. No deployment-population or API-drift guarantee.",
+        "backend": "jev",
+        "benchmark": "agentprocessbench",
+        "celeus": {
+          "accuracy_interval_is_reflected_loss_cs": true,
+          "features": {
+            "api_calls": 0,
+            "dimension": 52,
+            "gold_access": false,
+            "mean": [
+              1.0,
+              10.338906031985092,
+              8.347021725681262,
+              0.03091333117746744,
+              0.0018817382930677849,
+              0.005519200732106682,
+              0.014921193463718325,
+              0.0,
+              0.006095962619042567,
+              0.05196111779626125,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              3.1626143706923386,
+              0.28646512489038023,
+              0.04359680354485508,
+              0.5402023163107699,
+              4.352426164897257,
+              0.05865538070969901,
+              -0.1309501579456969,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              -0.3573446865264203,
+              -0.08268635892343174,
+              0.7071067811865827,
+              -0.1361255777909772,
+              0.0,
+              0.0,
+              -0.2534235418553101,
+              0.31145367152898984,
+              0.05117719027516513,
+              -0.005612252113554176,
+              0.04223547284880191,
+              -0.0490298014096096,
+              0.15638294096757357,
+              0.2095193365479827,
+              0.1788256815444868,
+              0.05874943855925539,
+              -0.04754225688493364,
+              -0.12983344047098958,
+              -0.06944046720115865,
+              0.3335241742471944,
+              -0.23261089463921988,
+              -0.4589768552169043
+            ],
+            "names": [
+              "intercept",
+              "log_chars",
+              "log_words",
+              "digits",
+              "non_ascii",
+              "math",
+              "code",
+              "newlines",
+              "negation",
+              "quotes",
+              "log_A",
+              "log_B",
+              "length_gap",
+              "AB_overlap",
+              "log_evidence",
+              "log_candidate",
+              "candidate_evidence_overlap",
+              "number_mismatch",
+              "log_messages",
+              "tool_messages",
+              "tool_errors",
+              "step_fraction",
+              "log_option_mean",
+              "option_std_ratio",
+              "category_hash_0",
+              "category_hash_1",
+              "category_hash_2",
+              "category_hash_3",
+              "category_hash_4",
+              "category_hash_5",
+              "category_hash_6",
+              "category_hash_7",
+              "category_hash_8",
+              "category_hash_9",
+              "category_hash_10",
+              "category_hash_11",
+              "word_hash_0",
+              "word_hash_1",
+              "word_hash_2",
+              "word_hash_3",
+              "word_hash_4",
+              "word_hash_5",
+              "word_hash_6",
+              "word_hash_7",
+              "word_hash_8",
+              "word_hash_9",
+              "word_hash_10",
+              "word_hash_11",
+              "word_hash_12",
+              "word_hash_13",
+              "word_hash_14",
+              "word_hash_15"
+            ],
+            "scale": [
+              0.05,
+              0.6007424232085732,
+              0.5872905420969777,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.6407888671824056,
+              0.08692647534695716,
+              0.0879659382111555,
+              0.29407119651531777,
+              0.05,
+              0.05,
+              0.27467763071435236,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.353533062209375,
+              0.22722467109531413,
+              0.05,
+              0.2787922994273928,
+              0.05,
+              0.05,
+              0.11932949513175298,
+              0.13832778080685448,
+              0.0920905032160026,
+              0.10363794826074339,
+              0.14003593563464753,
+              0.09756649150190533,
+              0.13339326186556666,
+              0.1253125940279547,
+              0.08739754889927007,
+              0.0880578353270982,
+              0.14746506502551884,
+              0.19526514853741386,
+              0.1259955048254067,
+              0.22795918497846265,
+              0.2288780962346109,
+              0.13225536167778845
+            ],
+            "version": "public-structural-hash-v1"
+          },
+          "inference": "finite_pool_predictable_residual_betting",
+          "numerics": "outward_bisection_float64",
+          "paid_warmup_included": true,
+          "selection": {
+            "audit_pass": true,
+            "name": "celeus_water08",
+            "selection_sha256": "888a764f98656025783be677fef417e5baf1b86f0a3098ff0b11ccccf64947dd",
+            "source": "synthetic_development_only",
+            "validation_protocol": {
+              "N": 800,
+              "alpha_per_benchmark": 0.0125,
+              "audit_seed_start": 81000,
+              "audit_seeds": 100,
+              "candidate_settings": {
+                "celeus_guarded_ig": {
+                  "acquisition": "guarded_ig",
+                  "beta": 0.4,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                },
+                "celeus_mix04": {
+                  "acquisition": "mixture",
+                  "beta": 0.4,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                },
+                "celeus_uniform": {
+                  "acquisition": "uniform",
+                  "beta": 0.4,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                },
+                "celeus_water04": {
+                  "acquisition": "waterfill",
+                  "beta": 0.4,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                },
+                "celeus_water08": {
+                  "acquisition": "waterfill",
+                  "beta": 0.8,
+                  "cap": 0.9,
+                  "half_life": 64.0,
+                  "refit_every": 16,
+                  "ridge": 1.0,
+                  "surrogate": true,
+                  "warmup": 32
+                }
+              },
+              "check_every": 10,
+              "core_sha256": "1d7e6478d41e63f32a99690e37dcdd28cdfff69de7c9a1fc8cea974ce943a265",
+              "coverage_screen": "one-sided exact binomial p < .01/(methods*scenarios) flags an implementation concern; passing does NOT prove coverage",
+              "dev_seeds": 12,
+              "development_seed_start": 11000,
+              "epsilon_half_width": 0.05,
+              "extra_llm_calls": 0,
+              "jev_calls": 0,
+              "numpy": "2.3.5",
+              "python": "3.12.14",
+              "scenarios": [
+                "linear",
+                "heterogeneous",
+                "nonlinear",
+                "uninformative",
+                "rare_errors",
+                "clustered"
+              ],
+              "scipy": "1.17.0",
+              "selection_metric": "macro mean first-stop fraction; CELEUS candidates only; coverage screening first",
+              "synthetic_only": true
+            }
+          },
+          "settings": {
+            "acquisition": "waterfill",
+            "beta": 0.8,
+            "cap": 0.9,
+            "half_life": 64.0,
+            "refit_every": 16,
+            "ridge": 1.0,
+            "surrogate": true,
+            "warmup": 32
           }
-        }
+        },
+        "check_every": 10,
+        "correct": 1562,
+        "descriptive_subset_scores": {
+          "bfcl": {
+            "accuracy": 0.7252252252252253,
+            "certified": false,
+            "n": 444
+          },
+          "gaia_dev": {
+            "accuracy": 0.4847161572052402,
+            "certified": false,
+            "n": 458
+          },
+          "hotpotqa": {
+            "accuracy": 0.7220216606498195,
+            "certified": false,
+            "n": 277
+          },
+          "tau2": {
+            "accuracy": 0.742960944595822,
+            "certified": false,
+            "n": 1101
+          }
+        },
+        "epsilon_half_width": "0.02",
+        "error": null,
+        "evaluated": 2280,
+        "family_size": 4,
+        "input_too_long_scored_incorrect": 0,
+        "method": "celeus",
+        "mock": false,
+        "model": "jev-1.13.0",
+        "name": "AgentProcessBench",
+        "performance": {
+          "certified_under_assumptions": true,
+          "estimate": 0.708351539567927,
+          "estimate_definition": "CS midpoint",
+          "exact_denominator": null,
+          "exact_lower_count": null,
+          "exact_upper_count": null,
+          "kind": "anytime_cs",
+          "lower": 0.6885553139862703,
+          "sample_mean": 0.6850877192982456,
+          "sample_mean_note": "Descriptive only: adaptively selected sample mean is not a certified population estimate. Use CS midpoint and bounds.",
+          "upper": 0.7281477651495836,
+          "width": 0.039592451163313225
+        },
+        "pool": {
+          "adapter_version": "jev-adapters-v1.2-label-conflict-exclusion",
+          "benchmark": "agentprocessbench",
+          "counts": {
+            "candidate_cases": 8509,
+            "excluded_request_bytes": 2634,
+            "retained:bfcl": 1131,
+            "retained:gaia_dev": 1088,
+            "retained:hotpotqa": 687,
+            "retained:tau2": 2969,
+            "source_rows:bfcl": 250,
+            "source_rows:gaia_dev": 250,
+            "source_rows:hotpotqa": 250,
+            "source_rows:tau2": 250
+          },
+          "created_at": "2026-09-21T14:09:57.298831+00:00",
+          "excluded_item_ids": {},
+          "files": {
+            "bfcl": [
+              "bfcl/test.jsonl"
+            ],
+            "gaia_dev": [
+              "gaia_dev/test.jsonl"
+            ],
+            "hotpotqa": [
+              "hotpotqa/test.jsonl"
+            ],
+            "tau2": [
+              "tau2/test.jsonl"
+            ]
+          },
+          "max_request_bytes": 60000,
+          "metric": "Pooled step-label micro accuracy",
+          "mock_data": false,
+          "pool_sha256": "28175b7483743fac4bb983c190863970371901b8ff3a9b96cb9fba0eb1637d3e",
+          "pool_size": 5875,
+          "preparation_seed": 20260921,
+          "prepare_seconds": 7.597996628843248,
+          "repo_id": "LulaCola/AgentProcessBench",
+          "revision": "cd81f326aece8b0a3f6359e20df370690d3a98bf",
+          "scope": "Frozen eligible cases; source-prefix subsets are demos, not representative benchmark estimates.",
+          "source_row_limit_per_subset": 0,
+          "unit": "annotated assistant step"
+        },
+        "protocol_sha256": "b94e8da679fd9ff5d8763f53d2d17972e8428f7c19074f0abf5e16691fff08ce",
+        "resources": {
+          "active_wall_seconds": 963.4255988374352,
+          "api_attempts": 2085,
+          "busy_rejections": 0,
+          "concurrency": 1,
+          "cost_interval": null,
+          "cost_kind": "rate_card_from_api_usage_not_invoice; reused answers at original usage",
+          "cost_per_pool_case": 0.00018117485310638296,
+          "cross_run_cache_hits": 195,
+          "duplicate_requests": 0,
+          "input_tokens": 25342911,
+          "key_rejections": 0,
+          "known_paid_cost_usd": 0.9739342200000001,
+          "known_success_cost_usd": 1.064402262,
+          "output_tokens": 86640,
+          "paid_cases": 2085,
+          "paid_cost_usd": 0.9739342200000001,
+          "price": {
+            "input_usd_per_million": 0.042,
+            "note": "Unverified account rate-card assumption. Confirm in your TypeSafe console before a paid run; taxes/discounts/unknown failed calls are not included.",
+            "output_usd_per_million": 0.0
+          },
+          "rate_card_cost_usd": 1.064402262,
+          "request_seconds_sum": 811.7785121481866,
+          "seconds_per_pool_case": null,
+          "successful_cases": 2280,
+          "time_interval": null,
+          "time_kind": "not_comparable_answers_reused_from_store",
+          "timing_complete": true,
+          "unaccounted_attempt_ids": []
+        },
+        "sample_fraction": 0.3880851063829787,
+        "seed": 20260921,
+        "status": "precision_reached",
+        "updated_at": "2026-09-21T17:06:03.738316+00:00"
       },
-      "totals": {
-        "fullCost": 0,
-        "targetCost": 0,
-        "surrogateCost": 0,
-        "overheadCost": 0,
-        "fullSeconds": 0,
-        "celeusSeconds": 0,
-        "baselineKind": "pending",
-        "runKind": "pending"
+      "full": null,
+      "comparison": {
+        "available": false,
+        "cost_saved_usd": null,
+        "time_saved_seconds": null,
+        "cost_saved_fraction": null,
+        "time_saved_fraction": null,
+        "overlap": null,
+        "requirement": "Savings require a completed full run AND an e-value run reaching its prespecified precision."
       },
-      "run": {
-        "apiCalls": 0,
-        "retryAttempts": 0,
-        "cacheHits": 0,
-        "concurrency": 0,
-        "randomSeeds": 0
+      "celeus_comparison": {
+        "available": false,
+        "cost_saved_usd": null,
+        "time_saved_seconds": null,
+        "cost_saved_fraction": null,
+        "time_saved_fraction": null,
+        "overlap": null
       },
-      "notes": "Publish the holdout construction, class balance, and primary metric definition."
+      "celeus_vs_evalue": {
+        "available": true,
+        "queries_saved": 1130,
+        "queries_saved_fraction": 0.33137829912023464,
+        "note": "Single independent runs at matched precision/alpha; negative savings are retained. Not a repeated-run superiority claim."
+      }
     }
-  ]
+  ],
+  "coverage_scope": "Family guarantee applies separately to each method over four primary metrics. Both methods together do not share a 95% family claim unless alpha is split again."
 }

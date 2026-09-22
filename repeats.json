@@ -1,0 +1,327 @@
+{
+  "repeats": 3,
+  "main_run": 1,
+  "benchmarks": [
+    {
+      "id": "arena",
+      "name": "Arena",
+      "celeus": {
+        "questions": [
+          3790,
+          5660,
+          5290
+        ],
+        "status": [
+          "precision_reached",
+          "precision_reached",
+          "precision_reached"
+        ],
+        "paid_cost_usd": [
+          0,
+          0,
+          0.176871198
+        ],
+        "fresh_cost_usd": [
+          0.49534728600000005,
+          0.752791116,
+          0.7076811000000001
+        ],
+        "mean_fresh_cost_usd": 0.651939834,
+        "reused_answers": [
+          3790,
+          5660,
+          3984
+        ],
+        "complete": true,
+        "mean_questions": 4913.333333333333,
+        "min_questions": 3790,
+        "max_questions": 5660,
+        "run1_accuracy_interval": [
+          0.45180256115865003,
+          0.49179885930320644
+        ],
+        "run1_estimate": 0.47180071023092823
+      },
+      "evalue": {
+        "questions": [
+          7500,
+          9510,
+          9130
+        ],
+        "status": [
+          "precision_reached",
+          "precision_reached",
+          "precision_reached"
+        ],
+        "paid_cost_usd": [
+          0.838334994,
+          1.0347704640000002,
+          0.902225856
+        ],
+        "fresh_cost_usd": [
+          0.9906479520000001,
+          1.260062706,
+          1.208892888
+        ],
+        "mean_fresh_cost_usd": 1.153201182,
+        "reused_answers": [
+          1125,
+          1691,
+          2307
+        ],
+        "complete": true,
+        "mean_questions": 8713.333333333334,
+        "min_questions": 7500,
+        "max_questions": 9510,
+        "run1_accuracy_interval": [
+          0.4540571947885551,
+          0.4938507035748605
+        ],
+        "run1_estimate": 0.4739539491817078
+      },
+      "mean_questions_saved_fraction": 0.4361132364192809,
+      "mean_fresh_cost_saved_fraction": 0.43466947122848165
+    },
+    {
+      "id": "mmlu_prox",
+      "name": "MMLU-ProX",
+      "celeus": {
+        "questions": [
+          3890,
+          4040,
+          4120
+        ],
+        "status": [
+          "precision_reached",
+          "precision_reached",
+          "precision_reached"
+        ],
+        "paid_cost_usd": [
+          0,
+          0.04391184,
+          0.130945584
+        ],
+        "fresh_cost_usd": [
+          0.12756466800000002,
+          0.131185656,
+          0.13369003200000001
+        ],
+        "mean_fresh_cost_usd": 0.13081345200000002,
+        "reused_answers": [
+          3890,
+          2681,
+          88
+        ],
+        "complete": true,
+        "mean_questions": 4016.6666666666665,
+        "min_questions": 3890,
+        "max_questions": 4120,
+        "run1_accuracy_interval": [
+          0.7363073121987664,
+          0.7762585267013113
+        ],
+        "run1_estimate": 0.7562829194500389
+      },
+      "evalue": {
+        "questions": [
+          6280,
+          6160,
+          6040
+        ],
+        "status": [
+          "precision_reached",
+          "precision_reached",
+          "precision_reached"
+        ],
+        "paid_cost_usd": [
+          0.19566909600000001,
+          0.18780896400000002,
+          0.1854363
+        ],
+        "fresh_cost_usd": [
+          0.20447863800000002,
+          0.199869138,
+          0.196380156
+        ],
+        "mean_fresh_cost_usd": 0.200242644,
+        "reused_answers": [
+          280,
+          381,
+          346
+        ],
+        "complete": true,
+        "mean_questions": 6160,
+        "min_questions": 6040,
+        "max_questions": 6280,
+        "run1_accuracy_interval": [
+          0.7409071446586624,
+          0.7807772844314362
+        ],
+        "run1_estimate": 0.7608422145450493
+      },
+      "mean_questions_saved_fraction": 0.347943722943723,
+      "mean_fresh_cost_saved_fraction": 0.34672530592434636
+    },
+    {
+      "id": "halueval",
+      "name": "HaluEval",
+      "celeus": {
+        "questions": [
+          4340,
+          3800,
+          3150
+        ],
+        "status": [
+          "precision_reached",
+          "precision_reached",
+          "precision_reached"
+        ],
+        "paid_cost_usd": [
+          0.14065812600000002,
+          0.11682867000000001,
+          0.079446864
+        ],
+        "fresh_cost_usd": [
+          0.14990841600000002,
+          0.13321728000000002,
+          0.108498852
+        ],
+        "mean_fresh_cost_usd": 0.13054151600000002,
+        "reused_answers": [
+          276,
+          443,
+          816
+        ],
+        "complete": true,
+        "mean_questions": 3763.3333333333335,
+        "min_questions": 3150,
+        "max_questions": 4340,
+        "run1_accuracy_interval": [
+          0.7339093130155951,
+          0.7738003132057059
+        ],
+        "run1_estimate": 0.7538548131106505
+      },
+      "evalue": {
+        "questions": [
+          6380,
+          6460,
+          6110
+        ],
+        "status": [
+          "precision_reached",
+          "precision_reached",
+          "precision_reached"
+        ],
+        "paid_cost_usd": [
+          0.13375651800000002,
+          0.106247904,
+          0.10188725400000001
+        ],
+        "fresh_cost_usd": [
+          0.21498309000000002,
+          0.21935802000000001,
+          0.20617052400000002
+        ],
+        "mean_fresh_cost_usd": 0.213503878,
+        "reused_answers": [
+          2385,
+          3294,
+          3063
+        ],
+        "complete": true,
+        "mean_questions": 6316.666666666667,
+        "min_questions": 6110,
+        "max_questions": 6460,
+        "run1_accuracy_interval": [
+          0.7129,
+          0.7528
+        ],
+        "run1_estimate": 0.73285
+      },
+      "mean_questions_saved_fraction": 0.40422163588390503,
+      "mean_fresh_cost_saved_fraction": 0.38857543374458037
+    },
+    {
+      "id": "agentprocessbench",
+      "name": "AgentProcessBench",
+      "celeus": {
+        "questions": [
+          2280,
+          2290,
+          2190
+        ],
+        "status": [
+          "precision_reached",
+          "precision_reached",
+          "precision_reached"
+        ],
+        "paid_cost_usd": [
+          0.9739342200000001,
+          0.7323777720000001,
+          0.281963346
+        ],
+        "fresh_cost_usd": [
+          1.064402262,
+          1.067092614,
+          1.024533468
+        ],
+        "mean_fresh_cost_usd": 1.052009448,
+        "reused_answers": [
+          195,
+          713,
+          1583
+        ],
+        "complete": true,
+        "mean_questions": 2253.3333333333335,
+        "min_questions": 2190,
+        "max_questions": 2290,
+        "run1_accuracy_interval": [
+          0.6885553139862703,
+          0.7281477651495836
+        ],
+        "run1_estimate": 0.708351539567927
+      },
+      "evalue": {
+        "questions": [
+          3410,
+          3350,
+          3280
+        ],
+        "status": [
+          "precision_reached",
+          "precision_reached",
+          "precision_reached"
+        ],
+        "paid_cost_usd": [
+          0.435211854,
+          0.130599252,
+          0.13113702000000002
+        ],
+        "fresh_cost_usd": [
+          1.586818212,
+          1.563423036,
+          1.5272303340000002
+        ],
+        "mean_fresh_cost_usd": 1.5591571940000002,
+        "reused_answers": [
+          2487,
+          3073,
+          2990
+        ],
+        "complete": true,
+        "mean_questions": 3346.6666666666665,
+        "min_questions": 3280,
+        "max_questions": 3410,
+        "run1_accuracy_interval": [
+          0.7022978723404255,
+          0.7421276595744681
+        ],
+        "run1_estimate": 0.7222127659574469
+      },
+      "mean_questions_saved_fraction": 0.3266932270916334,
+      "mean_fresh_cost_saved_fraction": 0.3252704396654954
+    }
+  ],
+  "note": "Means use only complete sets of runs that all reached the precision target. Intervals are from the pre-declared run 1; runs 2+ are not a source of alternative results."
+}
