@@ -1,6 +1,6 @@
 # CELEUS × Jev — evaluation results
 
-Live site: **https://zhijianzhouml.github.io/CELEUS-JEV/** · Paper: https://arxiv.org/pdf/2606.20820 · Code: https://github.com/zyecs/celeus
+Live site: **https://zhijianzhouml.github.io/CELEUS-JEV/** · Paper: https://arxiv.org/pdf/2606.20820 · Code: https://github.com/zhijianzhouml/CELEUS
 
 This site reports how accurate TypeSafe's Jev model (`jev-1.13.0`) is on four fixed benchmark pools. It also shows how few model calls **CELEUS** needs to certify that accuracy. CELEUS combines adaptive sampling, guided by a cheap CPU predictor, with a residual-corrected betting confidence sequence. It needs no extra LLM and no GPU.
 

@@ -12,7 +12,7 @@
   "resource_note": "Observed active wall time and usage × assumed price only. No certified cost/time interval is computed. Independent full runs are paid separately; reported savings are protocol differences, not refunds.",
   "links": {
     "paper": "https://arxiv.org/pdf/2606.20820",
-    "code": "https://github.com/zyecs/celeus"
+    "code": "https://github.com/zhijianzhouml/CELEUS"
   },
   "benchmarks": [
     {
