@@ -30,7 +30,8 @@
       ],
       "jev_comparable": {
         "score": 62.5,
-        "detail": "same rule; estimated from 5,442 randomly sampled decided votes (±1.3 points), not a certified interval; 66.0% if Jev's tie answers are left out"
+        "detail": "same rule; estimated from 5,442 randomly sampled decided votes (±1.3 points), not a certified interval; 66.0% if Jev's tie answers are left out",
+        "halfwidth": 1.3
       },
       "note": "Published: the Arena team's PPE study, 16,038 Chatbot Arena votes from 2024; each model's better of two judge prompts. Jev: same rule on our Arena pool. Jev's certified 4-choice score (with ties and both-bad) is not comparable.",
       "source": {

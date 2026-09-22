@@ -10,6 +10,15 @@
       "id": "arena",
       "name": "Arena",
       "pool_size": 134243,
+      "full_pool_cost_estimate_usd": {
+        "estimate": 17.7316737360448,
+        "ci95": [
+          17.422053720831038,
+          18.041293751258564
+        ],
+        "sample_size": 7500,
+        "method": "pool size × mean API cost per question in a uniform random sample of the pool"
+      },
       "celeus": {
         "questions": [
           3790,
@@ -53,6 +62,15 @@
       "id": "mmlu_prox",
       "name": "MMLU-ProX",
       "pool_size": 340982,
+      "full_pool_cost_estimate_usd": {
+        "estimate": 11.102473716961148,
+        "ci95": [
+          11.001555481317284,
+          11.203391952605012
+        ],
+        "sample_size": 6280,
+        "method": "pool size × mean API cost per question in a uniform random sample of the pool"
+      },
       "celeus": {
         "questions": [
           3890,
@@ -96,6 +114,15 @@
       "id": "halueval",
       "name": "HaluEval",
       "pool_size": 30000,
+      "full_pool_cost_estimate_usd": {
+        "estimate": 1.010892272727273,
+        "ci95": [
+          0.9982887550921966,
+          1.0234957903623492
+        ],
+        "sample_size": 6380,
+        "method": "pool size × mean API cost per question in a uniform random sample of the pool"
+      },
       "celeus": {
         "questions": [
           4340,
@@ -139,6 +166,15 @@
       "id": "agentprocessbench",
       "name": "AgentProcessBench",
       "pool_size": 5875,
+      "full_pool_cost_estimate_usd": {
+        "estimate": 2.7338876819648097,
+        "ci95": [
+          2.711647779935369,
+          2.75612758399425
+        ],
+        "sample_size": 3410,
+        "method": "pool size × mean API cost per question in a uniform random sample of the pool"
+      },
       "celeus": {
         "questions": [
           2280,
