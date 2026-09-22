@@ -1,0 +1,196 @@
+{
+  "note": "Published scores of other LLMs, copied from each benchmark's paper; we did not run these models. Setups differ from ours as noted, so comparisons are indicative.",
+  "benchmarks": [
+    {
+      "id": "arena",
+      "name": "Arena",
+      "metric": "Agreement with the human vote, ties removed (guessing = 50%)",
+      "decimals": 2,
+      "rows": [
+        {
+          "model": "GPT-4o (2024-08-06)",
+          "score": 67.71
+        },
+        {
+          "model": "Claude 3.5 Sonnet (2024-06-20)",
+          "score": 67.33
+        },
+        {
+          "model": "GPT-4o-mini (2024-07-18)",
+          "score": 66.46
+        },
+        {
+          "model": "Gemini 1.5 Pro-002",
+          "score": 66.09
+        },
+        {
+          "model": "Gemini 1.5 Flash-002",
+          "score": 65.04
+        }
+      ],
+      "jev_comparable": {
+        "score": 62.5,
+        "detail": "same rule; estimated from 5,442 randomly sampled decided votes (±1.3 points), not a certified interval; 66.0% if Jev's tie answers are left out"
+      },
+      "note": "Published: the Arena team's PPE study, 16,038 Chatbot Arena votes from 2024; each model's better of two judge prompts. Jev: same rule on our Arena pool. Jev's certified 4-choice score (with ties and both-bad) is not comparable.",
+      "source": {
+        "title": "How to Evaluate Reward Models for RLHF (Frick et al., 2024)",
+        "url": "https://arxiv.org/abs/2410.14872",
+        "table": "Table 4, Overall"
+      }
+    },
+    {
+      "id": "mmlu_prox",
+      "name": "MMLU-ProX",
+      "metric": "Accuracy, average over 29 languages",
+      "decimals": 1,
+      "rows": [
+        {
+          "model": "DeepSeek-R1",
+          "score": 75.5
+        },
+        {
+          "model": "Qwen3-235B (thinking)",
+          "score": 74.9
+        },
+        {
+          "model": "GPT-4.1",
+          "score": 72.7,
+          "detail": "71.1% without examples"
+        },
+        {
+          "model": "DeepSeek-V3",
+          "score": 70.5
+        },
+        {
+          "model": "o4-mini",
+          "score": 69.3
+        },
+        {
+          "model": "Qwen3-235B",
+          "score": 66.7
+        },
+        {
+          "model": "GPT-4o",
+          "score": 61.1
+        },
+        {
+          "model": "Gemma 3 27B",
+          "score": 56.6
+        },
+        {
+          "model": "Llama 3.3 70B",
+          "score": 55.8
+        }
+      ],
+      "note": "Same 11,759 test questions per language. Published models used 5 worked examples and step-by-step reasoning; Jev answered directly, with no examples.",
+      "source": {
+        "title": "MMLU-ProX (Xuan et al., 2025)",
+        "url": "https://arxiv.org/abs/2503.10497",
+        "table": "Tables 3 and 7"
+      }
+    },
+    {
+      "id": "halueval",
+      "name": "HaluEval",
+      "metric": "Accuracy, average of QA, dialogue and summarization",
+      "decimals": 2,
+      "rows": [
+        {
+          "model": "ChatGPT (gpt-3.5-turbo)",
+          "score": 64.51,
+          "detail": "QA 62.59 · dialogue 72.40 · summarization 58.53"
+        },
+        {
+          "model": "Claude 2",
+          "score": 64.09,
+          "detail": "QA 69.78 · dialogue 64.73 · summarization 57.75"
+        },
+        {
+          "model": "Claude",
+          "score": 62.06,
+          "detail": "QA 67.60 · dialogue 64.83 · summarization 53.76"
+        },
+        {
+          "model": "text-davinci-003",
+          "score": 55.36,
+          "detail": "QA 49.65 · dialogue 68.37 · summarization 48.07"
+        },
+        {
+          "model": "Vicuna 7B",
+          "score": 50.77,
+          "detail": "QA 60.34 · dialogue 46.35 · summarization 45.62"
+        },
+        {
+          "model": "Llama 2-Chat 7B",
+          "score": 47.71,
+          "detail": "QA 49.60 · dialogue 43.99 · summarization 49.55"
+        }
+      ],
+      "note": "Original 2023 paper, same yes/no task on a randomly chosen correct or made-up answer; averages computed from its per-task table. Its QA prompt gave no evidence text (Jev was given it) and included examples.",
+      "source": {
+        "title": "HaluEval (Li et al., 2023)",
+        "url": "https://arxiv.org/abs/2305.11747",
+        "table": "Table 5"
+      }
+    },
+    {
+      "id": "agentprocessbench",
+      "name": "AgentProcessBench",
+      "metric": "Step accuracy over all labelled steps",
+      "decimals": 1,
+      "rows": [
+        {
+          "model": "Gemini 3 Flash Preview (thinking)",
+          "score": 81.6
+        },
+        {
+          "model": "Gemini 3 Flash Preview",
+          "score": 78.3
+        },
+        {
+          "model": "Kimi K2.5 (thinking)",
+          "score": 75.9
+        },
+        {
+          "model": "GPT-5.2-Chat",
+          "score": 74.8
+        },
+        {
+          "model": "DeepSeek-V3.2 (thinking)",
+          "score": 72.8
+        },
+        {
+          "model": "DeepSeek-V3.2",
+          "score": 71.4
+        },
+        {
+          "model": "Kimi K2.5",
+          "score": 71.4
+        },
+        {
+          "model": "GPT-5.2 (thinking, medium)",
+          "score": 71.0
+        },
+        {
+          "model": "GPT-5.2",
+          "score": 70.1
+        },
+        {
+          "model": "Qwen3-30B-A3B (thinking)",
+          "score": 68.5
+        },
+        {
+          "model": "Llama 3.3 70B Instruct",
+          "score": 54.4
+        }
+      ],
+      "note": "Published models labelled a whole trajectory in one call; Jev judged one step per call. Our pool leaves out the 31% longest steps.",
+      "source": {
+        "title": "AgentProcessBench (Fan et al., 2026)",
+        "url": "https://arxiv.org/abs/2603.14465",
+        "table": "Table 3"
+      }
+    }
+  ]
+}
