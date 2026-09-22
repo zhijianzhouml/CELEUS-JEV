@@ -24,7 +24,7 @@ One CELEUS run over all four benchmarks costs about $1.97 in API usage.
 
 | File | Content |
 |---|---|
-| `index.html` | The page: styles and script, with no external dependencies. |
+| `index.html` | The page: styles and script; its fonts (Plus Jakarta Sans, IBM Plex Mono) load from Google Fonts. |
 | `data.json` | CELEUS run 1, the pre-declared main result: intervals, counts, costs, provenance. |
 | `repeats.json` | CELEUS question counts for all 3 runs, with means, full-pool sizes and costs. |
 | `comparisons.json` | Published scores of other LLMs (GPT, Claude, Gemini, DeepSeek, Qwen, Llama, …) shown in the section 01 chart, copied from each benchmark's paper with source and table, plus setup notes. These models were not run by us. |

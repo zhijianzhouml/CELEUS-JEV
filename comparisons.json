@@ -5,6 +5,8 @@
       "id": "arena",
       "name": "Arena",
       "metric": "Agreement with the human vote, ties removed (guessing = 50%)",
+      "intro": "People chat with two anonymous AI models at once and vote for the better answer. The task is to predict each person’s vote. As in the published study, ties are left out, so guessing scores 50%.",
+      "takeaway": "Jev scores 60.5–65.1%, a few points below the published AI judges (65.0–67.7%); only the top of its range reaches Gemini 1.5 Flash. The published scores keep each model’s better result from two prompts, while Jev used one fixed prompt, and Jev’s occasional “tie” answers count as wrong.",
       "decimals": 2,
       "rows": [
         {
@@ -45,6 +47,8 @@
       "id": "mmlu_prox",
       "name": "MMLU-ProX",
       "metric": "Accuracy, average over 29 languages",
+      "intro": "Hard, university-level multiple-choice questions with up to 10 options, in 29 languages (11,759 questions per language). The score is the share answered correctly across all languages.",
+      "takeaway": "Jev’s 73.6–77.6% overlaps the two best published models, DeepSeek-R1 (75.5%) and Qwen3-235B with thinking (74.9%), and is above GPT-4.1 (72.7%) and every other model shown. The published models were given 5 worked examples and reasoned step by step; Jev answered directly, without examples.",
       "decimals": 1,
       "rows": [
         {
@@ -96,6 +100,8 @@
       "id": "halueval",
       "name": "HaluEval",
       "metric": "Accuracy, average of QA, dialogue and summarization",
+      "intro": "Each case pairs a source text (background knowledge, a dialogue or a document) with an answer, reply or summary, and about half of these contain made-up facts. The task is to say whether it does. The score is the share judged correctly, averaged over the three tasks.",
+      "takeaway": "Jev’s 73.4–77.4% is about 9 to 13 points above the best published result (ChatGPT, 64.5%) and above every other model shown. These results are from 2023 and older models, and their QA test did not show the evidence text that Jev was given, so part of the gap comes from the setup.",
       "decimals": 2,
       "rows": [
         {
@@ -140,6 +146,8 @@
       "id": "agentprocessbench",
       "name": "AgentProcessBench",
       "metric": "Step accuracy over all labelled steps",
+      "intro": "Records of AI agents working through tasks with tools, where people labelled every step the agent took as helpful, neutral or harmful. The task is to judge each step. The score is the share of steps judged correctly.",
+      "takeaway": "Jev’s 68.9–72.8% is in the middle of the pack: level with GPT-5.2, DeepSeek-V3.2 and Kimi K2.5 (70.1–72.8%), below the top four models (74.8–81.6%) and above Qwen3-30B (68.5%) and Llama 3.3 70B (54.4%). Published models labelled a whole agent run in one call, whereas Jev judged one step at a time, and our pool leaves out the longest 31% of steps.",
       "decimals": 1,
       "rows": [
         {
